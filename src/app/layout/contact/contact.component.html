@@ -1,0 +1,35 @@
+<div id="contact" class="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact</h2>
+        <p>Contact Me</p>
+      </div>
+      <form  class="php-email-form mt-4 " [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <input type="text" name="name" class="form-control" formControlName="name" id="name" placeholder="Your Name" >
+            <span *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="text-danger">
+              Please enter your name.
+            </span>
+          </div>
+          <div class="col-md-6 form-group mt-3 mt-md-0">
+            <input type="email" class="form-control" name="email" formControlName="email" id="email" placeholder="Your Email" >
+            <span *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="text-danger">
+              Please enter your email.
+            </span>
+          </div>
+        </div>
+        <div class="form-group mt-3">
+          <input type="text" class="form-control" name="subject" formControlName="subject" id="subject" placeholder="Subject" >
+          <span *ngIf="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched" class="text-danger">
+            Please enter your subject.
+          </span>
+        </div>
+        <div class="form-group mt-3">
+          <textarea class="form-control" name="message" rows="5" formControlName="message" placeholder="Message" ></textarea>
+        </div>
+        <div class="text-center my-3"><button class="submit-btn" [disabled]="contactForm.invalid" type="submit">Send Message</button></div>
+      </form>
+
+    </div>
+</div>

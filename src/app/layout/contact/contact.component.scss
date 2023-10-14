@@ -1,0 +1,22 @@
+.contact{
+    background-color: black;
+    padding: 150px 0px;
+}
+
+span{
+  font-size:14px ;
+}
+
+.submit-btn{
+    background-color: transparent !important;
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 6px;
+
+    &:hover{
+      background-color: #ed0e55 !important;
+      border-color: #720b2c ;
+    }
+  }
+  
