@@ -26,9 +26,7 @@
 		li {
 			a {
 				display: flex !important;
-			}
-			
-			
+			}	
 		}
 	}
 	.aside-show {
@@ -92,7 +90,6 @@
 			}
 		}
 	}
-
 	.nav-link {
 		padding: 5px 0px;
 		color: inherit;
@@ -222,25 +219,9 @@
 	margin: 0 10px;
 	font-size: 13px;
 }
-
-
-
-
-.arrow-language {
-	font-size: 10px;
-	height: 10px;
-	width: 10px;
-	fill: #64ffda;
-}
-::ng-deep .dropdown-toggle::after {
-	display: none;
-}
 #logo {
 	color:white;
 }
-
-
-
 .logo a {
 	color: #64ffda;
 	width: 42px;
