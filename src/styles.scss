@@ -31,8 +31,8 @@ body {
     height: 100vh;
     z-index: -1;
   }
-  
-  @media (min-width: 1024px) {
+      
+    @media (min-width: 1024px) {
     body::before {
       background-attachment: fixed;
     }
@@ -291,7 +291,7 @@ body {
     }
   
     .navbar ul {
-      display: none;
+      // display: none;
     }
   }
   
@@ -387,16 +387,19 @@ body {
     text-transform: uppercase;
     color: #aaaaaa;
     font-family: "Poppins", sans-serif;
+    border-bottom: 2px solid hsl(341, 89%, 49%);
+    padding: 10px;
+    width: max-content;
   }
   
-  .section-title h2::after {
-    content: "";
-    width: 120px;
-    height: 1px;
-    display: inline-block;
-    background: #ed0e55;
-    margin: 4px 10px;
-  }
+  // .section-title h2::after {
+  //   content: "";
+  //   width: 120px;
+  //   height: 1px;
+  //   display: inline-block;
+  //   background: #ed0e55;
+  //   margin: 4px 10px;
+  // }
   
   .section-title p {
     margin: 0;

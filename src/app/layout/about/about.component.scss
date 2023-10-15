@@ -1,4 +1,9 @@
 .about{
-    padding-top: 150px;
+    padding: 150px 0px;
     background-color: black;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

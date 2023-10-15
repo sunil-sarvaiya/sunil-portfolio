@@ -62,5 +62,13 @@ svg{
       border-color: #720b2c ;
     }
   }
-  
- 
+  .img-class-profile{
+   height: 500px;
+   width: 450px;
+  }
+  @media (max-width: 500px) {
+    .img-class-profile {
+     height: 300px;
+     width: fit-content;
+    }
+  }
