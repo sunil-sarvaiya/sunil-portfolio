@@ -11,6 +11,7 @@ import { AboutComponent } from './layout/about/about.component';
 import { ContactComponent } from './layout/contact/contact.component';
 import { ProjectsComponent } from './layout/projects/projects.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ExperienceComponent } from './layout/experience/experience.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ExperienceComponent
   ],
   imports: [
     BrowserModule,
