@@ -12,6 +12,8 @@ import { ContactComponent } from './layout/contact/contact.component';
 import { ProjectsComponent } from './layout/projects/projects.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ExperienceComponent } from './layout/experience/experience.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { ExperienceComponent } from './layout/experience/experience.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
