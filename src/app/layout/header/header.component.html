@@ -1,125 +1,80 @@
-<nav
-	class="navbar main-navbar on-top bg-dark"
->
+<nav class="navbar main-navbar on-top bg-dark">
 	<div class="header-container">
 		<div class="logo fade-enter-done" tabindex="-1">
-			<a href="/" aria-label="home"
-				><div class="hex-container">
-								</div>
+			<a href="/" aria-label="home">
+				<div class="hex-container">
+				</div>
 			</a>
 		</div>
 		<ul ngbNav #nav="ngbNav" class="menu-ul">
-			<li
-				ngbNavItem
-				
-			>
-				<a ngbNavLink routerLink="/home" routerLinkActive="active"
-					><span class="nav-number"></span>
+			<li ngbNavItem>
+				<a ngbNavLink routerLink="/home" routerLinkActive="active"><span class="nav-number"></span>
 					<span class="underline nav-text">
-						Home</span
-					></a
-				>
+						Home</span></a>
 				<ng-template ngbNavContent>First content</ng-template>
 			</li>
-			<li
-				ngbNavItem
-				
-			>
-				<a ngbNavLink (click)="scroll('jobs')" routerLink="/projects" routerLinkActive="active"
-					><span class="nav-number"> </span>
+			<li ngbNavItem>
+				<a ngbNavLink (click)="scroll('jobs')" routerLink="/projects" routerLinkActive="active"><span
+						class="nav-number"> </span>
 					<span class="underline nav-text">
-						Projects</span
-					></a
-				>
+						Projects</span></a>
 				<ng-template ngbNavContent>Second content</ng-template>
 			</li>
-			<li
-				ngbNavItem
-				
-			>
-				<a ngbNavLink (click)="scroll('projects')" routerLink="/about" routerLinkActive="active"
-					><span class="nav-number"> </span>
+			<li ngbNavItem>
+				<a ngbNavLink (click)="scroll('projects')" routerLink="/about" routerLinkActive="active"><span
+						class="nav-number"> </span>
 					<span class="underline nav-text">
-						About</span
-					></a
-				>
+						About</span></a>
 				<ng-template ngbNavContent>Second content</ng-template>
 			</li>
-			<li
-				ngbNavItem
-			
-			>
-				<a ngbNavLink (click)="scroll('testimonial')"  routerLink="/contact" routerLinkActive="active"
-					><span class="nav-number"> </span>
+			<li ngbNavItem>
+				<a ngbNavLink (click)="scroll('testimonial')" routerLink="/contact" routerLinkActive="active"><span
+						class="nav-number"> </span>
 					<span class="underline nav-text">
-						Contact</span
-					></a
-				>
+						Contact</span></a>
 				<ng-template ngbNavContent>Second content</ng-template>
 			</li>
-			<li
-				ngbNavItem
-				
-			>
-				<a ngbNavLink (click)="scroll('contact')" routerLink="/experience" routerLinkActive="active"
-					><span class="nav-number"> </span>
+			<li ngbNavItem>
+				<a ngbNavLink (click)="scroll('contact')" routerLink="/experience" routerLinkActive="active"><span
+						class="nav-number"> </span>
 					<span class="underline nav-text">
-						Experience</span
-					></a
-				>
+						Experience</span></a>
 				<ng-template ngbNavContent>Second content</ng-template>
 			</li>
 		</ul>
 		<div class="menu-wrapper">
-			<div
-				[class.animate]="responsiveMenuVisible"
-				(click)="responsiveMenuVisible = !responsiveMenuVisible"
-				class="hamburger-menu"
-			></div>
+			<div [class.animate]="responsiveMenuVisible" (click)="responsiveMenuVisible = !responsiveMenuVisible"
+				class="hamburger-menu"></div>
 		</div>
-		<div
-			class="menu-responsive"
-			[ngStyle]="{ 'pointer-events': !responsiveMenuVisible ? 'none' : '' }"
-		>
-			<aside
-				[class.aside-show]="responsiveMenuVisible"
-			
-				class="on-top"
-			>
+		<div class="menu-responsive" [ngStyle]="{ 'pointer-events': !responsiveMenuVisible ? 'none' : '' }">
+			<aside [class.aside-show]="responsiveMenuVisible" class="on-top">
 				<nav>
 					<ol>
-						<li
-						
-						>
-							<a (click)="scroll('about')" routerLink="/home" routerLinkActive="active">
+						<li>
+							<a (click)="scroll('about')" routerLink="/home" routerLinkActive="active" (click)="responsiveMenuVisible = !responsiveMenuVisible">
 								<span> </span> Home
 							</a>
 						</li>
-						<li
-							
-						>
-							<a (click)="scroll('jobs')" routerLink="/projects" routerLinkActive="active">
+						<li>
+							<a (click)="scroll('jobs')" routerLink="/projects" routerLinkActive="active" (click)="responsiveMenuVisible = !responsiveMenuVisible">
 								<span> </span> Projects
 							</a>
 						</li>
-						<li
-							
-						>
-							<a (click)="scroll('projects')" routerLink="/about" routerLinkActive="active">
+						<li>
+							<a (click)="scroll('projects')" routerLink="/about" routerLinkActive="active" (click)="responsiveMenuVisible = !responsiveMenuVisible">
 								<span> </span>About
 							</a>
 						</li>
-						<li
-						
-						>
-							<a (click)="scroll('projects')"  routerLink="/contact" routerLinkActive="active">
+						<li>
+							<a (click)="scroll('projects')" routerLink="/contact" routerLinkActive="active" (click)="responsiveMenuVisible = !responsiveMenuVisible">
 								<span> </span>Contact
 							</a>
 						</li>
-
-						
-	
-
+						<li>
+							<a (click)="scroll('projects')" routerLink="/experience" routerLinkActive="active" (click)="responsiveMenuVisible = !responsiveMenuVisible">
+								<span> </span>Experience
+							</a>
+						</li>
 					</ol>
 				</nav>
 			</aside>

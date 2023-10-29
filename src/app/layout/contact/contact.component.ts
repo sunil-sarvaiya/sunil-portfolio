@@ -47,6 +47,7 @@ export class ContactComponent {
       console.log(res, 'res');
       if(res){
         this.successMessage=true;
+       this.contactForm.reset();
         setTimeout(()=>{
           this.successMessage=false;
         },3000)
