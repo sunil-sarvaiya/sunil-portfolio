@@ -1,6 +1,6 @@
-<div class="main-section" >
+<div class="main-section" [ngClass]="themeMode ?'main-section-color':''">
     <div class="row g-0 ">
-        <div class="col-lg-6 container col-md-12 content-section text-white text-center mt-5">
+        <div class="col-lg-6 container col-md-12 content-section text-white text-center mt-5"  [ngClass]="themeMode ?'light-font-color':''">
             <H1>Hi, I am Sunil Sarvaiya </H1>
             <p>I'm a passionate Web developer</p>
             <div class="social-links">

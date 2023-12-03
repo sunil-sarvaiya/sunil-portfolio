@@ -1,5 +1,5 @@
-<nav class="navbar main-navbar on-top bg-dark">
-	<div class="header-container">
+<nav class="navbar main-navbar on-top ">
+	<div class="header-container" [ngClass]="themeMode ?'header-main':''">
 		<div class="logo fade-enter-done" tabindex="-1">
 			<a href="/" aria-label="home">
 				<div class="hex-container">
@@ -7,37 +7,44 @@
 			</a>
 		</div>
 		<ul ngbNav #nav="ngbNav" class="menu-ul">
+
+			<li ngbNavItem>
+				<button class="btn" (click)="toggleTheme('dark')" [class.active]="currentTheme === 'dark'"><i class="fas fa-moon"></i> </button>
+				<button class="btn" (click)="toggleTheme('light')" [class.active]="currentTheme === 'light'"><i class="fas fa-sun"></i></button>
+
+			</li>
+
 			<li ngbNavItem>
 				<a ngbNavLink routerLink="/home" routerLinkActive="active"><span class="nav-number"></span>
-					<span class="underline nav-text">
+					<span class="underline nav-text" [ngClass]="themeMode ?'nav-text-color':''">
 						Home</span></a>
 				<ng-template ngbNavContent>First content</ng-template>
 			</li>
 			<li ngbNavItem>
 				<a ngbNavLink (click)="scroll('jobs')" routerLink="/projects" routerLinkActive="active"><span
 						class="nav-number"> </span>
-					<span class="underline nav-text">
+					<span class="underline nav-text" [ngClass]="themeMode ?'nav-text-color':''">
 						Projects</span></a>
 				<ng-template ngbNavContent>Second content</ng-template>
 			</li>
 			<li ngbNavItem>
 				<a ngbNavLink (click)="scroll('projects')" routerLink="/about" routerLinkActive="active"><span
 						class="nav-number"> </span>
-					<span class="underline nav-text">
+					<span class="underline nav-text" [ngClass]="themeMode ?'nav-text-color':''">
 						About</span></a>
 				<ng-template ngbNavContent>Second content</ng-template>
 			</li>
 			<li ngbNavItem>
 				<a ngbNavLink (click)="scroll('testimonial')" routerLink="/contact" routerLinkActive="active"><span
 						class="nav-number"> </span>
-					<span class="underline nav-text">
+					<span class="underline nav-text" [ngClass]="themeMode ?'nav-text-color':''">
 						Contact</span></a>
 				<ng-template ngbNavContent>Second content</ng-template>
 			</li>
 			<li ngbNavItem>
 				<a ngbNavLink (click)="scroll('contact')" routerLink="/experience" routerLinkActive="active"><span
 						class="nav-number"> </span>
-					<span class="underline nav-text">
+					<span class="underline nav-text" [ngClass]="themeMode ?'nav-text-color':''">
 						Experience</span></a>
 				<ng-template ngbNavContent>Second content</ng-template>
 			</li>
@@ -51,27 +58,32 @@
 				<nav>
 					<ol>
 						<li>
-							<a (click)="scroll('about')" routerLink="/home" routerLinkActive="active" (click)="responsiveMenuVisible = !responsiveMenuVisible">
+							<a (click)="scroll('about')" routerLink="/home" routerLinkActive="active"
+								(click)="responsiveMenuVisible = !responsiveMenuVisible">
 								<span> </span> Home
 							</a>
 						</li>
 						<li>
-							<a (click)="scroll('jobs')" routerLink="/projects" routerLinkActive="active" (click)="responsiveMenuVisible = !responsiveMenuVisible">
+							<a (click)="scroll('jobs')" routerLink="/projects" routerLinkActive="active"
+								(click)="responsiveMenuVisible = !responsiveMenuVisible">
 								<span> </span> Projects
 							</a>
 						</li>
 						<li>
-							<a (click)="scroll('projects')" routerLink="/about" routerLinkActive="active" (click)="responsiveMenuVisible = !responsiveMenuVisible">
+							<a (click)="scroll('projects')" routerLink="/about" routerLinkActive="active"
+								(click)="responsiveMenuVisible = !responsiveMenuVisible">
 								<span> </span>About
 							</a>
 						</li>
 						<li>
-							<a (click)="scroll('projects')" routerLink="/contact" routerLinkActive="active" (click)="responsiveMenuVisible = !responsiveMenuVisible">
+							<a (click)="scroll('projects')" routerLink="/contact" routerLinkActive="active"
+								(click)="responsiveMenuVisible = !responsiveMenuVisible">
 								<span> </span>Contact
 							</a>
 						</li>
 						<li>
-							<a (click)="scroll('projects')" routerLink="/experience" routerLinkActive="active" (click)="responsiveMenuVisible = !responsiveMenuVisible">
+							<a (click)="scroll('projects')" routerLink="/experience" routerLinkActive="active"
+								(click)="responsiveMenuVisible = !responsiveMenuVisible">
 								<span> </span>Experience
 							</a>
 						</li>

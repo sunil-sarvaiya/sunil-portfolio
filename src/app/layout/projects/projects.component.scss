@@ -2,6 +2,12 @@
     padding: 150px 0px;
     background-color: black;
 }
+.main-section-color{
+  background-color:  rgb(154, 138, 138);
+}
+::ng-deep .light-font-color{
+  color: black !important;
+}
 .see-details-class{
     background-color: transparent;
     color: white;

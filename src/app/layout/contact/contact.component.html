@@ -14,11 +14,11 @@
   </div>
 </div>
 
-<div id="contact" class="contact">
+<div id="contact" class="contact" [ngClass]="themeMode ?'light-bg-color':''">
   <div class="container">
     <div class="section-title">
-      <h2>Contact</h2>
-      <p>Contact Me</p>
+      <h2 [ngClass]="themeMode ?'light-font-color':''">Contact</h2>
+      <p [ngClass]="themeMode ?'light-font-color':''">Contact Me</p>
     </div>
     <form  class="php-email-form mt-4 " [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
       <div class="row">
@@ -44,7 +44,7 @@
       <div class="form-group mt-3">
         <textarea class="form-control" name="message" rows="5" formControlName="message" placeholder="Message" ></textarea>
       </div>
-      <div class="text-center my-3"><button class="submit-btn" [disabled]="contactForm.invalid" type="submit">Send Message</button></div>
+      <div class="text-center my-3"><button class="submit-btn" [disabled]="contactForm.invalid" type="submit" [ngClass]="themeMode ?'light-font-color':''">Send Message</button></div>
     </form>
 
   </div>

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl,FormGroup,Validators } from '@angular/forms';
+import { CommonService } from 'src/app/service/common.service';
 
 
 @Component({
@@ -9,17 +10,38 @@ import { FormControl,FormGroup,Validators } from '@angular/forms';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
-  preset: any = "uploadPreset"
+    
+
+ 
+
+  preset: any = "uploadPreset";
+  themeMode:boolean=false;
   cloudName: any = "dj7m5tuv9"
   contactForm!:FormGroup;
   successMessage:boolean=false;
   errorMessage:boolean=false;
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private commonService:CommonService) {
   }
   ngOnInit(){
     this.initForm();
+    this.commonService.theme.subscribe((res)=>{
+      console.log(res,'home');
+      if(res === true){
+        this.themeMode = false;
+      }
+      else{
+        this.themeMode = true;
+      }
+    })
   }
-
+  toggleTheme(data:any){
+    if (data==='dark'){
+      this.commonService.theme.next(true)
+    }
+    else{
+      this.commonService.theme.next(false)
+    }
+  }
   initForm(){
     this.contactForm = new FormGroup ({
        name :new  FormControl('',Validators.required),

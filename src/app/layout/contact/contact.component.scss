@@ -2,6 +2,15 @@
     background-color: black;
     padding: 150px 0px;
 }
+.light-font-color{
+  color: black !important;
+}
+.light-bg-color{
+  background-color: rgb(154, 138, 138) !important;
+  ::placeholder{
+    color: black !important;
+  }
+}
 
 span{
   font-size:14px ;

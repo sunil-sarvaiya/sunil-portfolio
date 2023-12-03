@@ -107,6 +107,9 @@
 		color: whitesmoke !important;
 		padding-bottom: 4px;
 	}
+	.nav-text-color{
+		color: black !important;
+	}
 	.menu-wrapper {
 		top: 0;
 		left: 0;
@@ -246,4 +249,7 @@
 	justify-content: center;
 	-webkit-box-align: center;
 	align-items: center;
+}
+.header-main{
+	background-color:  rgb(127, 113, 113) !important;
 }
