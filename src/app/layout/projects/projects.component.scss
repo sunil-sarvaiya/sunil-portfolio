@@ -1,6 +1,10 @@
-.services{
-    padding: 150px 0px;
+.projects{
+    padding: 150px 0px 60px 0px;
     background-color: black;
+    display: flex;
+    align-items: center;
+    min-height: 100vh; /* Set a minimum height for the section */
+    height: auto;
 }
 .main-section-color{
   background-color:  rgb(154, 138, 138);
@@ -16,8 +20,39 @@
     border-radius: 6px;
 
     &:hover{
-      background-color: #720b2c !important;
-      border-color: #720b2c ;
+      background-color: black !important;
+      border-color: #ed0e55 ;
+      box-shadow: 0px 0px 20px 1px #ed0e55;
+      color: #ed0e55;
     }
   }
+  .project-card:hover{
+      border: 2px solid #ed0e55 !important;
+      box-shadow: 0px 0px 26px 1px #ed0e55;
+  } 
+
+  .projects .project-card {
+    text-align: center;
+    background: rgba(204, 204, 204, 0.1);
+    padding: 80px 20px;
+  }
   
+::ng-deep .img-fluid{
+  height: 25vh !important;
+}
+@media screen and (max-width: 992px) {
+  ::ng-deep .img-fluid{
+    height: 15vh !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  ::ng-deep .img-fluid{
+    height: 15vh !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  ::ng-deep .img-fluid{
+    height: 25vh !important;
+  }
+}

@@ -15,8 +15,6 @@ export class ProjectsComponent {
 
     ngOnInit(){
       this.commonService.theme.subscribe((res)=>{
-        console.log(res);
-        
         if(res === true){
           this.themeMode = false;
         }
