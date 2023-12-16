@@ -20,12 +20,12 @@ export class ContactComponent {
   contactForm!:FormGroup;
   successMessage:boolean=false;
   errorMessage:boolean=false;
+  generalErrorMessage: string | undefined;
   constructor(private http: HttpClient, private commonService:CommonService) {
   }
   ngOnInit(){
     this.initForm();
     this.commonService.theme.subscribe((res)=>{
-      console.log(res,'home');
       if(res === true){
         this.themeMode = false;
       }
@@ -51,6 +51,7 @@ export class ContactComponent {
        });
      }
   onSubmit(data: any) {
+    if (this.contactForm.valid) {
     const beforeFolderName = `${data.email}_${this.getFormattedDate()}`;
     const folderPath = `portfolio data/contactUsData/${beforeFolderName}/`; 
     const file = data;
@@ -63,10 +64,13 @@ export class ContactComponent {
     formDataForUpload.append('cloud_name', this.cloudName);
     formDataForUpload.append("public_id", publicId)
     this.uploadTocloudinary(formDataForUpload)
+    }
+    else{
+      this.generalErrorMessage = 'Please Enter all fileds';
+    }
   }
   uploadTocloudinary(formData: any) {
     this.http.post(`https://api.cloudinary.com/v1_1/${this.cloudName}/raw/upload/`, formData).subscribe((res) => {
-      console.log(res, 'res');
       if(res){
         this.successMessage=true;
        this.contactForm.reset();
