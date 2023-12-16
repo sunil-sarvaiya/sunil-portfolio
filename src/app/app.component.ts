@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'portfolio';
+   showScrollButton = false;
+   scrollThreshold = 100; 
+ 
+   scrollToTop() {
+     window.scrollTo({ top: 0, behavior: 'smooth' });
+   }
+ 
+   @HostListener('window:scroll', [])
+   onWindowScroll() {
+     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+     this.showScrollButton = scrollPosition > this.scrollThreshold;
+   }
 }
