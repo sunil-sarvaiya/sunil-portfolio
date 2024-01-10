@@ -1,5 +1,7 @@
+@import '../../../assets/variables';
+
 .main-section{
-  background-color: black;
+  background-color:  $black-color;
   width: 100%;
   padding: 150px 0px;
   display: flex;
@@ -9,14 +11,14 @@
   // height: 100vh;
 }
  .main-section-color{
-  background-color: rgb(154, 138, 138) ;
+  background-color: $light-mode-bg-color;
 }
 .light-font-color{
-  color: black !important;
+  color:  $black-color !important;
 }
 
 svg{
-    fill: white;
+    fill: $white-color;
     height: 16px;
     width: 16px;
     margin: 0px 10px;
@@ -38,7 +40,7 @@ svg{
     justify-content: center;
     align-items: center;
     background: rgba(255, 255, 255, 0.1);
-    color: #fff;
+    color: $white-color;
     line-height: 1;
     margin-right: 8px;
     border-radius: 50%;
@@ -46,23 +48,23 @@ svg{
     height: 40px;
   }
   a:hover{
-    background-color: #ed0e55;
-    box-shadow: 0px 0px 22px 1px #ed0e55;
+    background-color: $primary-color;
+    box-shadow: 0px 0px 22px 1px $primary-color;
   }
   img{
     opacity: 0.6;
   }
   .cv-class{
     background-color: transparent;
-    color: white;
+    color: $white-color;
     padding: 10px 20px;
-    border: 2px solid white;
+    border: 2px solid $white-color;
     border-radius: 6px;
 
     &:hover{
-      background-color: #ed0e55;
-      border-color: #720b2c ;
-    box-shadow: 0px 0px 26px 1px #ed0e55;
+      background-color: $primary-color;
+      border-color: $dark-primary-color ;
+    box-shadow: 0px 0px 26px 1px $primary-color;
 
     }
   }

@@ -21,6 +21,7 @@ export class ContactComponent {
   successMessage:boolean=false;
   errorMessage:boolean=false;
   generalErrorMessage: string | undefined;
+  generalErrorMessageShow:any=false;
   constructor(private http: HttpClient, private commonService:CommonService) {
   }
   ngOnInit(){
@@ -52,6 +53,7 @@ export class ContactComponent {
      }
   onSubmit(data: any) {
     if (this.contactForm.valid) {
+      this.generalErrorMessageShow=false;
     const beforeFolderName = `${data.email}_${this.getFormattedDate()}`;
     const folderPath = `portfolio data/contactUsData/${beforeFolderName}/`; 
     const file = data;
@@ -67,6 +69,7 @@ export class ContactComponent {
     }
     else{
       this.generalErrorMessage = 'Please Enter all fileds';
+      this.generalErrorMessageShow=true;
     }
   }
   uploadTocloudinary(formData: any) {

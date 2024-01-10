@@ -14,7 +14,6 @@ export class AboutComponent {
 
   ngOnInit(){
     this.commonService.theme.subscribe((res)=>{
-      console.log(res,'home');
       if(res === true){
         this.themeMode = false;
       }

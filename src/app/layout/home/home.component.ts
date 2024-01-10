@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonService } from 'src/app/service/common.service';
+import { homedata } from 'src/assets/data';
 
 @Component({
   selector: 'app-home',
@@ -8,15 +9,24 @@ import { CommonService } from 'src/app/service/common.service';
 })
 export class HomeComponent {
   themeMode:boolean=false;
+  homeData:any;
     
   constructor(private commonService:CommonService){
 
   }
 
   ngOnInit(){
+    this.commonService.getAllData().subscribe(
+      (res: any) => {
+        this.homeData = res['homedata'];
+        console.log(homedata);
+      },
+      (error) => {
+        console.error('Error fetching data:', error);
+      }
+    );
+    
     this.commonService.theme.subscribe((res)=>{
-      console.log(res,'home');
-      
       if(res === true){
         this.themeMode = false;
       }

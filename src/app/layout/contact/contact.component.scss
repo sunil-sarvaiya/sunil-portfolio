@@ -1,5 +1,8 @@
+@import '../../../assets/variables';
+
+
 .contact{
-    background-color: black;
+    background-color:  $black-color;
     padding: 150px 0px;
     display: flex;
   align-items: center;
@@ -7,12 +10,12 @@
   height: auto;
 }
 .light-font-color{
-  color: black !important;
+  color:  $black-color !important;
 }
 .light-bg-color{
-  background-color: rgb(154, 138, 138) !important;
+  background-color: $light-mode-bg-color!important;
   ::placeholder{
-    color: black !important;
+    color:  $black-color !important;
   }
 }
 
@@ -22,16 +25,16 @@ span{
 
 .submit-btn{
     background-color: transparent !important;
-    color: white;
+    color: $white-color;
     padding: 10px 20px;
-    border: 2px solid white;
+    border: 2px solid $white-color;
     border-radius: 6px;
 
     &:hover{
-      background-color: black !important;
-      border-color: #ed0e55 ;
-      box-shadow: 0px 0px 10px 1px #ed0e55;
-      color: #ed0e55;
+      background-color:  $black-color !important;
+      border-color: $primary-color ;
+      box-shadow: 0px 0px 10px 1px $primary-color;
+      color: $primary-color;
     }
   }
   .modal {
@@ -48,7 +51,7 @@ span{
   }
   
   .success-dialog {
-    background: #ed0e55;
+    background: $primary-color;
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);

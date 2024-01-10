@@ -21,7 +21,7 @@
       <p [ngClass]="themeMode ?'light-font-color':''">Contact Me</p>
     </div>
     <form  class="php-email-form mt-4 " [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
-      <div *ngIf="generalErrorMessage" class="mb-3">
+      <div *ngIf="generalErrorMessageShow" class="mb-3">
         <span class="text-danger">
           {{generalErrorMessage}}
         </span>

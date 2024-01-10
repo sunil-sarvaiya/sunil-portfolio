@@ -1,34 +1,36 @@
+@import '../../../assets/variables';
+
 .projects{
     padding: 150px 0px 60px 0px;
-    background-color: black;
+    background-color:  $black-color;
     display: flex;
     align-items: center;
     min-height: 100vh; /* Set a minimum height for the section */
     height: auto;
 }
 .main-section-color{
-  background-color:  rgb(154, 138, 138);
+  background-color: $light-mode-bg-color;
 }
 ::ng-deep .light-font-color{
-  color: black !important;
+  color:  $black-color !important;
 }
 .see-details-class{
     background-color: transparent;
-    color: white;
+    color: $white-color;
     padding: 10px 20px;
-    border: 2px solid white;
+    border: 2px solid $white-color;
     border-radius: 6px;
 
     &:hover{
-      background-color: black !important;
-      border-color: #ed0e55 ;
-      box-shadow: 0px 0px 20px 1px #ed0e55;
-      color: #ed0e55;
+      background-color:  $black-color !important;
+      border-color: $primary-color ;
+      box-shadow: 0px 0px 20px 1px $primary-color;
+      color: $primary-color;
     }
   }
   .project-card:hover{
-      border: 2px solid #ed0e55 !important;
-      box-shadow: 0px 0px 26px 1px #ed0e55;
+      border: 2px solid $primary-color !important;
+      box-shadow: 0px 0px 26px 1px $primary-color;
   } 
 
   .projects .project-card {

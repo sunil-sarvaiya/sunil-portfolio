@@ -1,23 +1,25 @@
+@import '../../../assets/variables';
+
 .services{
     padding: 150px 0px;
-    background-color: black;
+    background-color:  $black-color;
 }
 .light-bg-color{
-  background-color: rgb(154, 138, 138) !important;
+  background-color: $light-mode-bg-color!important;
 }
 .light-font-color{
-  color: black;
+  color:  $black-color;
 }
 .see-details-class{
     background-color: transparent;
-    color: white;
+    color: $white-color;
     padding: 10px 20px;
-    border: 2px solid white;
+    border: 2px solid $white-color;
     border-radius: 6px;
 
     &:hover{
-      background-color: #720b2c !important;
-      border-color: #720b2c ;
+      background-color: $dark-primary-color !important;
+      border-color: $dark-primary-color ;
     }
   }
   
