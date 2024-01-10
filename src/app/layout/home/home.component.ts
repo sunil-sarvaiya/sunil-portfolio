@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CommonService } from 'src/app/service/common.service';
-import { homedata } from 'src/assets/data';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +18,6 @@ export class HomeComponent {
     this.commonService.getAllData().subscribe(
       (res: any) => {
         this.homeData = res['homedata'];
-        console.log(homedata);
       },
       (error) => {
         console.error('Error fetching data:', error);
