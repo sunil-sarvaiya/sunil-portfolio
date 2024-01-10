@@ -247,12 +247,12 @@ body {
     content: "";
     position: absolute;
     width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
+    height: 3px;
+    bottom: 18px;
+    right: 0;
     background-color: #ed0e55;
     visibility: hidden;
-    width: 0px;
+    width: 100px !important;
     transition: all 0.3s ease-in-out 0s;
   }
   

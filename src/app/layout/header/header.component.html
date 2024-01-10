@@ -56,15 +56,24 @@
 		<div class="menu-responsive" [ngStyle]="{ 'pointer-events': !responsiveMenuVisible ? 'none' : '' }">
 			<aside [class.aside-show]="responsiveMenuVisible" class="on-top">
 				<nav>
-					<ol>
+					<ol style="margin-top:500px ;">
 						<li>
-							<a (click)="scroll('about')" routerLink="/home" routerLinkActive="active"
+							<button class="btn" (click)="toggleTheme('dark')" [class.active]="currentTheme === 'dark'"><i class="fas fa-moon"></i> </button>
+			
+						</li>
+						<li>
+							<button class="btn" (click)="toggleTheme('light')" [class.active]="currentTheme === 'light'"><i class="fas fa-sun"></i></button>
+
+						</li>
+
+						<li>
+							<a (click)="scroll('projects')" routerLink="/home" routerLinkActive="active"
 								(click)="responsiveMenuVisible = !responsiveMenuVisible">
 								<span> </span> Home
 							</a>
 						</li>
 						<li>
-							<a (click)="scroll('jobs')" routerLink="/projects" routerLinkActive="active"
+							<a (click)="scroll('projects')" routerLink="/projects" routerLinkActive="active"
 								(click)="responsiveMenuVisible = !responsiveMenuVisible">
 								<span> </span> Projects
 							</a>
