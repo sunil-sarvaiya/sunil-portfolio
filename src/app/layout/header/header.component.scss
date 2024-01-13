@@ -8,7 +8,14 @@
 	z-index: 9;
 	height: 100px;
 	transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}.btn{
+	border: 1px solid $white-color;
+	padding: 0.125rem 0.75rem;
 }
+.fa-sun{
+	color: $white-color !important;
+}
+
 .nav-shadow {
 	height: 70px;
 	box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
@@ -68,4 +75,8 @@
 }
 .header-main{
 	background-color: $dense-light-mode-color !important;
+	.btn{
+		border: 1px solid $black-color;
+	}
 }
+

@@ -8,12 +8,8 @@
     min-height: 100vh; /* Set a minimum height for the section */
     height: auto;
 }
-.main-section-color{
-  background-color: $light-mode-bg-color;
-}
-::ng-deep .light-font-color{
-  color:  $black-color !important;
-}
+
+
 .see-details-class{
     background-color: transparent;
     color: $white-color;
@@ -57,4 +53,29 @@
   ::ng-deep .img-fluid{
     height: 25vh !important;
   }
+}
+
+
+//light mode
+.main-section-light{
+  background-color: $light-mode-bg-color;
+  h2, p,h4, .btn, .light-font-color{
+    color: $light-font-color !important;
+  }
+
+  .see-details-class{
+
+    &:hover{
+      background-color:  $light-secondary-color !important;
+      border-color: $dense-light-mode-color ;
+      box-shadow: 0px 0px 20px 1px $light-secondary-color;
+      color: $white-color;
+    }
+  }
+
+  .project-card:hover{
+    border: 2px solid $light-secondary-color !important;
+    box-shadow: 0px 0px 26px 1px $light-secondary-color--dense;
+} 
+
 }

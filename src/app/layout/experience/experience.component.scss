@@ -1,15 +1,16 @@
 @import '../../../assets/variables';
+.main-section{
+  background-color:  $black-color;
+  width: 100%;
+  padding: 150px 0px;
+  display: flex;
+  align-items: center;
+  min-height: 100vh; /* Set a minimum height for the section */
+  height: auto;
+  // height: 100vh;
+}
 
-.services{
-    padding: 150px 0px;
-    background-color:  $black-color;
-}
-.light-bg-color{
-  background-color: $light-mode-bg-color!important;
-}
-.light-font-color{
-  color:  $black-color;
-}
+
 .see-details-class{
     background-color: transparent;
     color: $white-color;
@@ -22,4 +23,10 @@
       border-color: $dark-primary-color ;
     }
   }
-  
+  .light-bg-light{
+    background-color: $light-mode-bg-color!important;
+
+    .light-font-color{
+      color:  $light-font-color;
+    }
+  }

@@ -1,3 +1,5 @@
+@import '../assets/variables';
+
 .scroll-to-top-btn {
     position: fixed;
     bottom: 20px;
@@ -9,13 +11,26 @@
     border-radius: 4px;
     cursor: pointer;
     z-index: 99999;
-  }
-  .scroll-to-top-btn:hover {
-    border: 2px solid #ed0e55;
-    background-color: transparent !important;
-    box-shadow: 0px 0px 22px 1px #ed0e55;
-    .fa{
-        color: #ed0e55;
+    &:hover{
+      border: 2px solid #ed0e55;
+      background-color: transparent !important;
+      box-shadow: 0px 0px 22px 1px #ed0e55;
+      .fa{
+          color: #ed0e55;
+      }
     }
   }
-  
+
+  .main-section-light{
+    background-color: $light-secondary-color;
+    &:hover{
+      border: 2px solid $dense-light-mode-color;
+      background-color: transparent !important;
+      box-shadow: 0px 0px 22px 1px $light-secondary-color--dense;
+      .fa{
+          color: $dense-light-mode-color ;
+      }
+    }
+
+
+  }

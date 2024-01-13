@@ -1,4 +1,4 @@
-<div class="modal" *ngIf="successMessage" >
+<div class="modal" *ngIf="successMessage" [ngClass]="themeMode ?'light-bg-light':''" >
   <div class="success-dialog">
     <i class="fas fa-check-circle"></i>
     <h1>Success!</h1>
@@ -6,7 +6,7 @@
   </div>
 </div>
 
-<div class="modal" *ngIf="errorMessage" >
+<div class="modal" *ngIf="errorMessage" [ngClass]="themeMode ?'light-bg-light':''" >
   <div class="success-dialog">
     <i class="fa fa-exclamation-triangle"></i>
     <h1>Error!</h1>
@@ -14,7 +14,7 @@
   </div>
 </div>
 
-<div id="contact" class="contact" [ngClass]="themeMode ?'light-bg-color':''">
+<div id="contact" class="contact" [ngClass]="themeMode ?'light-bg-light':''">
   <div class="container">
     <div class="section-title">
       <h2 [ngClass]="themeMode ?'light-font-color':''">Contact</h2>

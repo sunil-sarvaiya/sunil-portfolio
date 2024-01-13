@@ -1,77 +1,133 @@
 @import '../../../assets/variables';
 
-
-.contact{
-    background-color:  $black-color;
-    padding: 150px 0px;
-    display: flex;
+.contact {
+  background-color: $black-color;
+  padding: 150px 0px;
+  display: flex;
   align-items: center;
-  min-height: 100vh; /* Set a minimum height for the section */
+  min-height: 100vh;
+  /* Set a minimum height for the section */
   height: auto;
 }
-.light-font-color{
-  color:  $black-color !important;
+
+.light-font-color {
+  color: $black-color !important;
 }
-.light-bg-color{
-  background-color: $light-mode-bg-color!important;
-  ::placeholder{
-    color:  $black-color !important;
+
+
+
+span {
+  font-size: 14px;
+}
+
+.submit-btn {
+  background-color: transparent !important;
+  color: $white-color;
+  padding: 10px 20px;
+  border: 2px solid $white-color;
+  border-radius: 6px;
+
+  &:hover {
+    background-color: $black-color !important;
+    border-color: $primary-color ;
+    box-shadow: 0px 0px 10px 1px $primary-color;
+    color: $primary-color;
   }
 }
 
-span{
-  font-size:14px ;
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
-.submit-btn{
-    background-color: transparent !important;
+.success-dialog {
+  background: $primary-color;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.success-dialog i {
+  font-size: 48px;
+}
+
+.success-dialog h1 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.success-dialog p {
+  font-size: 16px;
+}
+
+.success-dialog button {
+  margin-top: 10px;
+}
+
+.contact .php-email-form {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.contact .php-email-form input,
+.contact .php-email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 0;
+  transition: 0.3s;
+  color: $white-color;
+}
+
+.contact .php-email-form input:focus,
+.contact .php-email-form textarea:focus {
+  background-color: rgba(255, 255, 255, 0.11);
+}
+
+.contact .php-email-form input::-moz-placeholder,
+.contact .php-email-form textarea::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+}
+
+.contact .php-email-form input::placeholder,
+.contact .php-email-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+}
+
+.contact .php-email-form input {
+  padding: 10px 15px;
+}
+
+
+.light-bg-light {
+  background-color: $light-mode-bg-color !important;
+
+  ::placeholder , p,h2 ,.light-font-color {
+    color: $light-font-color !important;
+  }
+  .submit-btn {
     color: $white-color;
     padding: 10px 20px;
     border: 2px solid $white-color;
     border-radius: 6px;
-
-    &:hover{
-      background-color:  $black-color !important;
-      border-color: $primary-color ;
-      box-shadow: 0px 0px 10px 1px $primary-color;
+  
+    &:hover {
+      background-color: $light-secondary-color !important;
+      border-color: $light-mode-bg-color ;
+      box-shadow: 0px 0px 10px 1px $light-secondary-color--dense;
       color: $primary-color;
     }
   }
-  .modal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-  }
-  
-  .success-dialog {
-    background: $primary-color;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-  }
-  
-  .success-dialog i {
-    font-size: 48px;
-  }
-  
-  .success-dialog h1 {
-    font-size: 24px;
-    margin: 10px 0;
-  }
-  
-  .success-dialog p {
-    font-size: 16px;
-  }
-  
-  .success-dialog button {
-    margin-top: 10px;
-  }
-  
+}

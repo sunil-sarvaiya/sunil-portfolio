@@ -1,16 +1,19 @@
 <nav class="navbar main-navbar on-top ">
 	<div class="header-container" [ngClass]="themeMode ?'header-main':''">
 		<div class="logo fade-enter-done" tabindex="-1">
-			<a href="/" aria-label="home">
+			<a  aria-label="home">
 				<div class="hex-container">
+					<img class="" style="height: 40px;"
+					src="https://res.cloudinary.com/dj7m5tuv9/image/upload/v1697274952/portfolio%20data/images/sunil-pic.png"
+					alt="">
 				</div>
 			</a>
 		</div>
 		<ul ngbNav #nav="ngbNav" class="menu-ul">
 
 			<li ngbNavItem>
-				<button class="btn" (click)="toggleTheme('dark')" [class.active]="currentTheme === 'dark'"><i class="fas fa-moon"></i> </button>
-				<button class="btn" (click)="toggleTheme('light')" [class.active]="currentTheme === 'light'"><i class="fas fa-sun"></i></button>
+				<button class="btn" *ngIf="!isShowThemeModeButton" (click)="toggleTheme('dark')" [class.active]="currentTheme === 'dark'"><i class="fas fa-moon"></i> </button>
+				<button class="btn" *ngIf="isShowThemeModeButton" (click)="toggleTheme('light')" [class.active]="currentTheme === 'light'"><i class="fas fa-sun"></i></button>
 
 			</li>
 
@@ -57,12 +60,12 @@
 			<aside [class.aside-show]="responsiveMenuVisible" class="on-top">
 				<nav>
 					<ol style="margin-top:500px ;">
-						<li>
-							<button class="btn" (click)="toggleTheme('dark')" [class.active]="currentTheme === 'dark'"><i class="fas fa-moon"></i> </button>
+						<li *ngIf="!isShowThemeModeButton">
+							<button class="btn"   (click)="toggleTheme('dark')" [class.active]="currentTheme === 'dark'"><i class="fas fa-moon"></i> </button>
 			
 						</li>
-						<li>
-							<button class="btn" (click)="toggleTheme('light')" [class.active]="currentTheme === 'light'"><i class="fas fa-sun"></i></button>
+						<li  *ngIf="isShowThemeModeButton">
+							<button class="btn"  (click)="toggleTheme('light')" [class.active]="currentTheme === 'light'"><i class="fas fa-sun"></i></button>
 
 						</li>
 

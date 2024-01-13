@@ -4,9 +4,7 @@
     padding: 150px 0px;
     background-color: $black-color;
 }
-.light-bg-color{
-    background-color: $light-mode-bg-color!important;
-}
+
 .light-font-color{
     color: $black-color;
 }
@@ -32,4 +30,42 @@
       border-color: $dark-primary-color ;
     }
   }
+  .about-me .content h3 {
+    font-weight: 700;
+    font-size: 26px;
+    color: #ed0e55;
+  }
   
+  .about-me .content ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .about-me .content ul li {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .about-me .content ul strong {
+    margin-right: 10px;
+  }
+  
+  .about-me .content ul i {
+    font-size: 16px;
+    margin-right: 5px;
+    color: #ed0e55;
+    line-height: 0;
+  }
+  
+  .about-me .content p:last-child {
+    margin-bottom: 0;
+  }
+
+
+  .light-bg-light{
+    background-color: $light-mode-bg-color!important;
+    p,h4,h2,h3,span,strong{
+      color: $light-font-color !important;
+    }
+}

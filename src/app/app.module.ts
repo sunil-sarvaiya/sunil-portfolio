@@ -13,6 +13,7 @@ import { ProjectsComponent } from './layout/projects/projects.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ExperienceComponent } from './layout/experience/experience.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderrComponent } from './layout/headerr/headerr.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent,
     ContactComponent,
     ProjectsComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    HeaderrComponent
   ],
   imports: [
     BrowserModule,

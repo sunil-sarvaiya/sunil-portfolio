@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { CommonService } from 'src/app/service/common.service';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  selector: 'app-headerr',
+  templateUrl: './headerr.component.html',
+  styleUrls: ['./headerr.component.scss']
 })
-export class HeaderComponent {
-  	responsiveMenuVisible: Boolean = false;
+export class HeaderrComponent {
+	responsiveMenuVisible: Boolean = false;
     themeMode:boolean=false;
     currentTheme: string = 'dark';
     isShowThemeModeButton = true;
@@ -39,8 +39,4 @@ export class HeaderComponent {
         this.commonService.theme.next(false)
       }
     }
-  scroll(data:any){
-  }
-
-
 }

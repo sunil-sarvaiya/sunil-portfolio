@@ -1,4 +1,3 @@
-<app-header></app-header>
+<app-headerr></app-headerr>
 <router-outlet></router-outlet>
-<button *ngIf="showScrollButton" class="scroll-to-top-btn" (click)="scrollToTop()"><i class="fa fa-arrow-up"></i></button>
-<!-- <app-footer></app-footer> -->
+<button *ngIf="showScrollButton" [ngClass]="themeMode ?'main-section-light':''" class="scroll-to-top-btn" (click)="scrollToTop()"><i class="fa fa-arrow-up"></i></button>
