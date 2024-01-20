@@ -1,8 +1,14 @@
 @import '../../../assets/variables';
 
 .about{
-    padding: 150px 0px;
+    padding: 100px 0px 50px 0px;
     background-color: $black-color;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .light-font-color{
