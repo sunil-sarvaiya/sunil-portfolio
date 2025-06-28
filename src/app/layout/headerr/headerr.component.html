@@ -1,40 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div [ngClass]="themeMode ?'header-main':''">
         <nav>
             <input type="checkbox" id="nav-toggle">
-            <div class="logo">	<img class="" style="height: 40px;"
-                src="https://res.cloudinary.com/dj7m5tuv9/image/upload/v1697274952/portfolio%20data/images/sunil-pic.png"
-                alt=""></div>
-           <ul class="links">
-            <li [ngClass]="isShowThemeModeButton ? 'test' :''">
-              <button class="btn"  *ngIf="!isShowThemeModeButton" (click)="toggleTheme('dark')" [class.active]="currentTheme === 'dark'"><i class="fas fa-moon"></i> </button> 
-           </li>
-            <li [ngClass]="!isShowThemeModeButton ? 'test' :''">
-              <button class="btn" [ngClass]="!isShowThemeModeButton ? 'test' :''"  *ngIf="isShowThemeModeButton" (click)="toggleTheme('light')" [class.active]="currentTheme === 'light'"><i class="fas fa-sun"></i></button>  
-    
-            </li>
-               <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-               <li><a routerLink="projects"  routerLinkActive="active">Projects</a></li>
-               <li><a routerLink="/about" routerLinkActive="active">About</a></li>
-               <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
-               <li><a routerLink="/experience"  routerLinkActive="active">Experience</a></li>
-           </ul>
-           <label for="nav-toggle" class="icon-burger">
-               <div class="line"></div>
-               <div class="line"></div>
-               <div class="line"></div>
-           </label>
+            <div class="logo"> <img class="" style="height: 40px;"
+                    src="https://res.cloudinary.com/dj7m5tuv9/image/upload/v1697274952/portfolio%20data/images/sunil-pic.png"
+                    alt=""></div>
+            <ul class="links">
+
+                <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+                <li><a routerLink="projects" routerLinkActive="active">Projects</a></li>
+                <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+                <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+                <li><a routerLink="/experience" routerLinkActive="active">Experience</a></li>
+            </ul>
+            <label for="nav-toggle" class="icon-burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </label>
         </nav>
-    
-    
+
+
         <label for="nav-toggle" class="icon-burger">
             <div class="line"></div>
             <div class="line"></div>
@@ -43,4 +39,5 @@
     </div>
 
 </body>
+
 </html>
