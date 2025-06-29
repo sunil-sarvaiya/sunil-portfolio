@@ -1,6 +1,7 @@
 <div class="main-section" [ngClass]="themeMode ?'main-section-light':''">
     <div class="row g-0 ">
-        <div class="col-lg-6 container col-md-12 col-sm-12 content-section text-white text-center mt-5"  [ngClass]="themeMode ?'light-font-color':''">
+        <div class="col-lg-6 container col-md-12 col-sm-12 content-section text-white text-center mt-5"
+            [ngClass]="themeMode ?'light-font-color':''">
             <h1>{{homeData?.namelabel}}</h1>
             <p>{{homeData?.subLabel}}</p>
             <div class="social-links">
@@ -35,18 +36,21 @@
             </div>
 
             <div class="mt-5" style="text-align: justify;padding: 20px;">
-                <p>{{homeData?.desc}}</p>
+                <p>Angular Developer with 1.5 years of experience in building responsive and high-performance
+                    single-page applications (SPAs). Proficient in Angular, TypeScript, HTML, and CSS, with strong
+                    skills in crafting interactive user interfaces, optimizing performance, and integrating RESTful
+                    APIs. Experienced in writing unit tests and UI tests to ensure code quality and application
+                    reliability.</p>
             </div>
 
-                <button class="cv-class" (click)="downloadPdf()">{{homeData?.downloadCV}}</button>
+            <button class="cv-class" (click)="downloadPdf()">{{homeData?.downloadCV}}</button>
 
 
         </div>
 
-        <div class="col-lg-6 col-md-12 col-sm-12 text-center ">
-            <img class="img-class-profile"
-                src="https://res.cloudinary.com/dj7m5tuv9/image/upload/v1697274952/portfolio%20data/images/sunil-pic.png"
-                alt=""> 
+        <div class="col-lg-6 col-md-12 col-sm-12 text-center d-flex justify-content-center align-items-center">
+            <img class="img-class-profile" alt="Sunil Profile Image"
+                src="https://res.cloudinary.com/dj7m5tuv9/image/upload/v1697274952/portfolio%20data/images/sunil-pic.png">
         </div>
 
     </div>

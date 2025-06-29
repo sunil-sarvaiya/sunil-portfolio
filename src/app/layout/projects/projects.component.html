@@ -1,42 +1,100 @@
-<div id="projects" class="projects"  [ngClass]="themeMode ?'main-section-light':''">
-    <div class="container">
+<div id="projects" class="projects" [ngClass]="themeMode ? 'main-section-light' : ''">
+  <div class="container">
+    <div class="section-title" [ngClass]="themeMode ? 'light-font-color' : ''">
+      <h2>Projects</h2>
+      <p>My Professional and Personal Projects</p>
+    </div>
 
-      <div class="section-title"  [ngClass]="themeMode ?'light-font-color':''">
-        <h2  [ngClass]="themeMode ?'light-font-color':''">Projects</h2>
-        <p  [ngClass]="themeMode ?'light-font-color':''">My Projects</p>
+    <div class="row">
+
+      <!-- <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="project-card rounded mt-3">
+          <img class="img-fluid"
+            src="https://res.cloudinary.com/dj7m5tuv9/image/upload/v1697282800/portfolio%20data/images/ecommerce.png"
+            alt="ecommerce image">
+          <h4 class="mt-3">Ecommerce Website</h4>
+          <p class="mb-3">Developed an Angular-based ecommerce platform using Bootstrap for responsive design.</p>
+          <a class="see-details-class mt-3" href="https://ecommece-angular.vercel.app/" target="_blank">See Preview</a>
+        </div>
       </div>
 
-      <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="project-card rounded mt-2">
-            <img class="img-fluid" src="https://res.cloudinary.com/dj7m5tuv9/image/upload/v1697282800/portfolio%20data/images/ecommerce.png" alt="">
-            <h4  [ngClass]="themeMode ?'light-font-color':''" class="mt-3">Ecommerce-Website</h4>
-            <p  [ngClass]="themeMode ?'light-font-color':''" class="mb-4">I Made Ecommerce website using Angular. for Design i used bootstrap</p>
-            <a  [ngClass]="themeMode ?'light-font-color':''" href="https://ecommece-angular.vercel.app/" target="_blank" class="see-details-class mt-5">See Preview</a>
-          </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="project-card rounded mt-3">
+          <img class="img-fluid"
+            src="https://res.cloudinary.com/dj7m5tuv9/image/upload/v1697970857/portfolio%20data/images/foodEasy_profile_tfqpp5.png"
+            alt="foodeasy image">
+          <h4 class="mt-3">FoodEasy Website</h4>
+          <p class="mb-3">Created a college project website using HTML and CSS for FoodEasy concept.</p>
+          <a class="see-details-class mt-3" href="https://food-easy-wp-sunil-project.vercel.app/" target="_blank">See
+            Preview</a>
         </div>
+      </div>
 
-        <div class="col-lg-4 col-md-6 col-sm-12 ">
-          <div class="project-card rounded mt-2">
-            <img class="img-fluid" src="https://res.cloudinary.com/dj7m5tuv9/image/upload/v1697970857/portfolio%20data/images/foodEasy_profile_tfqpp5.png" alt="">
-            <h4  [ngClass]="themeMode ?'light-font-color':''" class="mt-3">FoodEasy Website</h4>
-            <p  [ngClass]="themeMode ?'light-font-color':''" class="mb-4">I Made FoodEasy Website Design using HTML and CSS for college project. </p>
-            <a  [ngClass]="themeMode ?'light-font-color':''" href="https://food-easy-wp-sunil-project.vercel.app/" target="_blank" class="see-details-class mt-5">See Preview</a>
-          </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="project-card rounded mt-3">
+          <img class="img-fluid"
+            src="https://res.cloudinary.com/dj7m5tuv9/image/upload/v1698771182/portfolio%20data/images/sunil_portfolio_profile_dj8udk.png"
+            alt="portfolio image">
+          <h4 class="mt-3">Personal Portfolio</h4>
+          <p class="mb-3">Built using Angular with Bootstrap styling to showcase personal information and projects.</p>
+          <a class="see-details-class mt-3" href="https://sunil-sarvaiya-portfolio.vercel.app/" target="_blank">See
+            Preview</a>
         </div>
+      </div> -->
 
-        <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="project-card rounded mt-2">
-            <img class="img-fluid" src="https://res.cloudinary.com/dj7m5tuv9/image/upload/v1698771182/portfolio%20data/images/sunil_portfolio_profile_dj8udk.png" alt="">
-            <h4  [ngClass]="themeMode ?'light-font-color':''" class="mt-3">Personal Portfolio</h4>
-            <p  [ngClass]="themeMode ?'light-font-color':''" class="mb-4">I Made Personal Portfolio using Angular. for Design i used bootstrap</p>
-            <a  [ngClass]="themeMode ?'light-font-color':''" href="https://sunil-sarvaiya-portfolio.vercel.app/" target="_blank" class="see-details-class mt-5">See Preview</a>
-          </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="project-card rounded mt-3">
+          <h4 class="mt-3">Techtose Company Website</h4>
+          <p class="mb-3">Developed the official site using Bootstrap, Cloudinary for storage, and integrated Slick
+            Slider for enhanced UX.</p>
+          <ul class="text-start px-4">
+            <li>Responsive design using Bootstrap</li>
+            <li>Cloudinary used for media storage</li>
+            <li>Integrated Slick Slider</li>
+            <li>Interactive case study section</li>
+          </ul>
         </div>
+      </div>
 
-     
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="project-card rounded mt-3">
+          <h4 class="mt-3">Carbon Block (SaaS Platform)</h4>
+          <p class="mb-3">Contributed to development of Carbon Block using Angular and NGRX for scalable architecture.
+          </p>
+          <ul class="text-start px-4">
+            <li>Implemented key UI features using PrimeNG</li>
+            <li>Used NGRX for state management</li>
+            <li>Enhanced performance and UX</li>
+          </ul>
+        </div>
+      </div>
 
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="project-card rounded mt-3">
+          <h4 class="mt-3">ACA Compliance Alpha</h4>
+          <p class="mb-3">RegTech platform for compliance solutions; worked on Angular front-end and automated testing.
+          </p>
+          <ul class="text-start px-4">
+            <li>End-to-end tests using Playwright</li>
+            <li>Unit tests using Jest</li>
+            <li>Implemented grid filters, server-side export</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="project-card rounded mt-3">
+          <h4 class="mt-3">SafetyCube Platform</h4>
+          <p class="mb-3">Aviation safety and risk management tool with three functional interfaces.</p>
+          <ul class="text-start px-4">
+            <li><strong>Cube:</strong> Safety reports, audits, risks</li>
+            <li><strong>Portal:</strong> User reporting and collaboration</li>
+            <li><strong>Admin:</strong> Configuration and access control</li>
+            <li>Enhanced table features, optimized performance</li>
+          </ul>
+        </div>
       </div>
 
     </div>
+  </div>
 </div>
