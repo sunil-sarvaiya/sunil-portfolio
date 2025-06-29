@@ -1,81 +1,90 @@
 @import '../../../assets/variables';
 
-.projects{
-    padding: 100px 0px 60px 0px;
-    background-color:  $black-color;
-    display: flex;
-    align-items: center;
-    min-height: 100vh; /* Set a minimum height for the section */
-    height: auto;
+.projects {
+  padding: 100px 0px 60px 0px;
+  background-color: $black-color;
+  display: flex;
+  // align-items: center;
+  min-height: 100vh;
+  /* Set a minimum height for the section */
+  height: auto;
 }
 
 
-.see-details-class{
-    background-color: transparent;
-    color: $white-color;
-    padding: 10px 20px;
-    border: 2px solid $white-color;
-    border-radius: 6px;
+.see-details-class {
+  background-color: transparent;
+  color: $white-color;
+  padding: 10px 20px;
+  border: 2px solid $white-color;
+  border-radius: 6px;
 
-    &:hover{
-      background-color:  $black-color !important;
-      border-color: $primary-color ;
-      box-shadow: 0px 0px 20px 1px $primary-color;
-      color: $primary-color;
-    }
+  &:hover {
+    background-color: $black-color !important;
+    border-color: $primary-color ;
+    box-shadow: 0px 0px 20px 1px $primary-color;
+    color: $primary-color;
   }
-  .project-card:hover{
-      border: 2px solid $primary-color !important;
-      box-shadow: 0px 0px 26px 1px $primary-color;
-  } 
+}
 
-  .projects .project-card {
-    text-align: center;
-    background: rgba(204, 204, 204, 0.1);
-    padding: 80px 20px;
-  }
-  
-::ng-deep .img-fluid{
+.project-card:hover {
+  border: 2px solid $primary-color !important;
+  box-shadow: 0px 0px 26px 1px $primary-color;
+}
+
+.projects .project-card {
+  // text-align: center;
+  background: rgba(204, 204, 204, 0.1);
+  padding: 80px 20px;
+}
+
+::ng-deep .img-fluid {
   height: 25vh !important;
 }
+
 @media screen and (max-width: 992px) {
-  ::ng-deep .img-fluid{
+  ::ng-deep .img-fluid {
     height: 15vh !important;
   }
 }
+
 @media screen and (max-width: 768px) {
-  ::ng-deep .img-fluid{
+  ::ng-deep .img-fluid {
     height: 15vh !important;
   }
 }
 
 @media screen and (max-width: 600px) {
-  ::ng-deep .img-fluid{
+  ::ng-deep .img-fluid {
     height: 25vh !important;
   }
 }
 
 
 //light mode
-.main-section-light{
+.main-section-light {
   background-color: $light-mode-bg-color;
-  h2, p,h4, .btn, .light-font-color{
+
+  h2,
+  p,
+  h4,
+  .btn,
+  .light-font-color {
     color: $light-font-color !important;
   }
 
-  .see-details-class{
+  .see-details-class {
 
-    &:hover{
-      background-color:  $light-secondary-color !important;
+    &:hover {
+      background-color: $light-secondary-color !important;
       border-color: $dense-light-mode-color ;
       box-shadow: 0px 0px 20px 1px $light-secondary-color;
       color: $white-color;
     }
   }
 
-  .project-card:hover{
+  .project-card:hover {
     border: 2px solid $light-secondary-color !important;
     box-shadow: 0px 0px 26px 1px $light-secondary-color--dense;
-} 
+  }
 
 }

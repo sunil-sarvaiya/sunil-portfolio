@@ -50,11 +50,6 @@ a:hover {
   box-shadow: 0px 0px 22px 1px $primary-color;
 }
 
-img {
-  // opacity: 0.6;
-  filter: drop-shadow(3px 3px $black-color) sepia(100%) drop-shadow(-3px -3px $primary-color);
-}
-
 .cv-class {
   background-color: transparent;
   color: $white-color;
@@ -71,16 +66,49 @@ img {
 }
 
 .img-class-profile {
-  height: 500px;
-  width: 450px;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid $primary-color;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+  padding: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  background: linear-gradient(270deg, $primary-color, $dark-primary-color, $primary-color);
+  background-size: 600% 600%;
+  transition: all 0.3s ease;
+  animation: none;
+  animation: gradientAnimation 5s ease infinite;
+
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 @media (max-width: 500px) {
   .img-class-profile {
-    height: 300px;
-    width: fit-content;
+    height: 200px;
+    width: 200px;
   }
 }
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 @media (max-width: 992px) {
   .main-section {
