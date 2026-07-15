@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonService } from 'src/app/service/common.service';
 
 @Component({
@@ -7,36 +7,29 @@ import { CommonService } from 'src/app/service/common.service';
   styleUrls: ['./headerr.component.scss']
 })
 export class HeaderrComponent {
-	responsiveMenuVisible: Boolean = false;
-    themeMode:boolean=false;
-    currentTheme: string = 'dark';
-    isShowThemeModeButton = true;
-    
-    constructor(private commonService:CommonService){
+  themeMode: boolean = false;
+  menuOpen: boolean = false;
 
-    }
+  constructor(private commonService: CommonService) { }
 
-    ngOnInit(){
-      this.commonService.theme.subscribe((res)=>{
-        
-        if(res === true){
-          this.themeMode = false;
-        }
-        else{
-          this.themeMode = true;
-        }
-      })
-    }
-    toggleTheme(data:any){
-      this.currentTheme = data;
-      if (data==='dark'){
-        this.commonService.theme.next(true);
-        this.isShowThemeModeButton = true;
+  ngOnInit() {
+    this.commonService.theme.subscribe((res) => {
+      this.themeMode = res === true ? false : true;
+    });
+  }
 
-      }
-      else{
-        this.isShowThemeModeButton = false;
-        this.commonService.theme.next(false)
-      }
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    if (window.innerWidth > 768) {
+      this.menuOpen = false;
     }
+  }
 }
