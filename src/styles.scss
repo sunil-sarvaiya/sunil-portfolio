@@ -1,444 +1,95 @@
-/* You can add global styles to this file, and also import other style files */
-
-/* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+@import './assets/variables';
 
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    font-family: "Open Sans", sans-serif;
-    background-color: #040404;
-    color: #fff;
-    position: relative;
-    background: transparent;
-  }
-  
-  body::before {
-    content: "";
-    position: fixed;
-    background-size: cover;
-    left: 0;
-    right: 0;
-    top: 0;
-    height: 100vh;
-    z-index: -1;
-  }
-      
-    @media (min-width: 1024px) {
-    body::before {
-      background-attachment: fixed;
-    }
-  }
-  
-  a {
-    color: #ed0e55;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    color: #35e888;
-    text-decoration: none;
-  }
-  
- 
-  .navbar {
-    padding: 0;
-    // margin-top: 35px;
-  }
-  
-  .navbar ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    list-style: none;
-    align-items: center;
-  }
-  
-  .navbar li {
-    position: relative;
-  }
-  
-  .navbar li+li {
-    margin-left: 30px;
-  }
-  
-  .navbar a,
-  .navbar a:focus {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.7);
-    white-space: nowrap;
-    transition: 0.3s;
-  }
-  
-  .navbar a i,
-  .navbar a:focus i {
-    font-size: 12px;
-    line-height: 0;
-    margin-left: 5px;
-  }
-  
-  .navbar a:before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 3px;
-    bottom: 0;
-    right: 0;
-    background-color: #ed0e55;
-    visibility: hidden;
-    width: 50px !important;
-    transition: all 0.3s ease-in-out 0s;
-  }
-  
-  .navbar a:hover:before,
-  .navbar li:hover>a:before,
-  .navbar .active:before {
-    visibility: visible;
-    width: 50%;
-  }
-  
-  .navbar a:hover,
-  .navbar .active,
-  .navbar .active:focus,
-  .navbar li:hover>a {
-    color: #fff;
-  }
-  
-  /**
-  * Mobile Navigation 
-  */
-  .mobile-nav-toggle {
-    color: #fff;
-    font-size: 28px;
-    cursor: pointer;
-    display: none;
-    line-height: 0;
-    transition: 0.5s;
-    position: fixed;
-    right: 15px;
-    top: 15px;
-  }
-  
-  @media (max-width: 991px) {
-    .mobile-nav-toggle {
-      display: block;
-    }
-  
-    .navbar ul {
-      // display: none;
-    }
-  }
-  
-  .navbar-mobile {
-    position: fixed;
-    overflow: hidden;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.9);
-    transition: 0.3s;
-    z-index: 999;
-    margin-top: 0;
-  }
-  
-  .navbar-mobile .mobile-nav-toggle {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-  }
-  
-  .navbar-mobile ul {
-    display: block;
-    position: absolute;
-    top: 55px;
-    right: 15px;
-    bottom: 45px;
-    left: 15px;
-    padding: 10px 0;
-    overflow-y: auto;
-    transition: 0.3s;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-  }
-  
-  .navbar-mobile li {
-    padding: 12px 20px;
-  }
-  
-  .navbar-mobile li+li {
-    margin: 0;
-  }
-  
-  .navbar-mobile a,
-  .navbar-mobile a:focus {
-    font-size: 16px;
-    position: relative;
-  }
-  
-  /*--------------------------------------------------------------
-  # Sections General
-  --------------------------------------------------------------*/
+  font-family: 'Poppins', sans-serif;
+  background-color: $black-color;
+  color: $white-color;
+  overflow-x: hidden;
 
-  .section-title h2 {
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $black-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $primary-color;
+    border-radius: 4px;
+
+    &:hover {
+      background: darken($primary-color, 10%);
+    }
+  }
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $light-secondary-color;
+  }
+}
+
+::selection {
+  background: $primary-color;
+  color: $white-color;
+}
+
+.section-title {
+  margin-bottom: 50px;
+
+  h2 {
     font-size: 14px;
     font-weight: 500;
-    padding: 0;
-    line-height: 1px;
-    margin: 0 0 20px 0;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    color: #aaaaaa;
-    font-family: "Poppins", sans-serif;
-    border-bottom: 2px solid hsl(341, 89%, 49%);
-    padding: 10px;
-    width: max-content;
-  }
- 
-  .section-title p {
-    margin: 0;
-    margin: -15px 0 15px 0;
-    font-size: 36px;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-family: "Poppins", sans-serif;
-    color: #fff;
-  }
-  
-  
-  @keyframes animate-loading {
-    0% {
-      transform: rotate(0deg);
-    }
-  
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
-  /*--------------------------------------------------------------
-  # Credits
-  --------------------------------------------------------------*/
-  .credits {
-    position: fixed;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    padding: 15px;
-    text-align: right;
-    font-size: 13px;
-    color: #fff;
-    z-index: 999999;
-  }
-  
-  @media (max-width: 992px) {
-    .credits {
-      text-align: center;
-      padding: 10px;
-      background: rgba(0, 0, 0, 0.8);
-    }
-  }
-  
-  .credits a {
-    color: #ed0e55;
-    transition: 0.3s;
-  }
-  
-  .credits a:hover {
-    color: #fff;
+    color: $text-muted;
+    border-bottom: 2px solid $primary-color;
+    display: inline-block;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
   }
 
-  //header
-  .main-navbar {
-    height: 70px;
-    .menu-ul {
-      li {
-        margin: 0px 13px;
-      }
-      li:first-child {
-        margin-left: 0px;
-      }
-      li:last-child {
-        margin-right: 0px;
-      }
-    }
-    .menu-responsive {
-      position: fixed;
-      top: 0px;
-      bottom: 0px;
-      right: 0px;
-      width: 100%;
-      height: 100vh;
-      z-index: 10;
-      transform: translateX(0vw);
-      visibility: visible;
-      outline: 0px;
-      transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-      li {
-        a {
-          display: flex !important;
-        }	
-      }
-    }
-    .aside-show {
-      transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-      right: 0px;
-    }
-    aside {
-      width: 40%;
-      display: flex;
-      -webkit-box-pack: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      align-items: center;
-      flex-direction: column;
-      background-color: black;
-      height: 100%;
-      position: relative;
-      right: -625px;
-      margin-left: auto;
-      box-shadow: rgba(2, 12, 27, 0.7) -10px 0px 30px -15px;
-      padding: 25px;
-      transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-      nav {
-        display: flex;
-        -webkit-box-pack: justify;
-        justify-content: space-between;
-        -webkit-box-align: center;
-        align-items: center;
-        width: 100%;
-        flex-direction: column;
-        text-align: center;
-        color: white;
-        ol {
-          width: 100%;
-          padding: 0px;
-          margin: 0px;
-          list-style: none;
-          li {
-            font-size: 16px;
-            margin: 0px auto 10px;
-            span {
-              display: block;
-              color: blue;
-              font-size: 14px;
-              margin-bottom: 5px;
-            }
-            a {
-              display: inline-block;
-              text-decoration-skip-ink: auto;
-              color: inherit;
-              position: relative;
-              cursor: pointer;
-              width: 100%;
-              text-decoration: none;
-              transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-              padding: 3px 20px 20px;
-  
-            
-            }
-          }
-        }
-      }
-    }
-    .nav-link {
-      padding: 5px 0px;
-      color: inherit;
-      margin: 0px;
-      font-size: 13px;
-      &:hover {
-        color: rgb(0, 255, 76) !important;
-      }
-    }
-    .nav-number {
-      color: rebeccapurple;
-      font-size: 12px;
-    }
-    .nav-text {
-      color: whitesmoke !important;
-      padding-bottom: 4px;
-    }
-    .nav-text-color{
-      color: black !important;
-    }
-    .menu-wrapper {
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: 36px;
-      height: 60px;
-      cursor: pointer;
-      z-index: 11;
-      .hamburger-menu,
-      .hamburger-menu:after,
-      .hamburger-menu:before {
-        width: 36px;
-        height: 1.5px;
-      }
-      .hamburger-menu {
-        position: relative;
-        transform: translateY(25px);
-        background: white;
-        transition: all 0ms 300ms;
-        &:before {
-          content: "";
-          position: absolute;
-          left: 0;
-          bottom: 8px;
-          background: white;
-          transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
-            transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        &:after {
-          content: "";
-          position: absolute;
-          left: 0;
-          top: 8px;
-          background: white;
-          transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
-            transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        &.animate {
-          background: rgba(255, 255, 255, 0);
-          &:after {
-            top: 0;
-            transform: rotate(45deg);
-            transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1),
-              transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
-          }
-          &:before {
-            bottom: 0;
-            transform: rotate(-45deg);
-            transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1),
-              transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
-          }
-        }
-      }
-    }
-    .header-container {
-      display: flex;
-      -webkit-box-pack: justify;
-      justify-content: space-between;
-      -webkit-box-align: center;
-      align-items: center;
-      top: 0px;
-      z-index: 11;
-      padding: 0px 50px;
-      width: 100%;
-      height: 100px;
-      background-color: black;
-      backdrop-filter: blur(10px);
-      transition: var(--transition);
-      filter: none !important;
-      pointer-events: auto !important;
-      user-select: auto !important;
-      padding: 0 50px;
-    }
+  p {
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $white-color;
   }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

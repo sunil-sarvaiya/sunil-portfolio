@@ -7,27 +7,37 @@ import { CommonService } from 'src/app/service/common.service';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {
-  themeMode:boolean=false;
-    
-  constructor(private commonService:CommonService){
-  }
+  themeMode: boolean = false;
 
-  ngOnInit(){
-    this.commonService.theme.subscribe((res)=>{
-      if(res === true){
-        this.themeMode = false;
-      }
-      else{
-        this.themeMode = true;
-      }
-    })
-  }
-  toggleTheme(data:any){
-    if (data==='dark'){
-      this.commonService.theme.next(true)
+  education = [
+    {
+      degree: 'Bachelor of Engineering (Computer Engineering)',
+      school: 'Gujarat Technological University',
+      board: '2019 - 2023',
+      score: 'CPI: 7.48 / 10',
+      duration: '2019 - 2023'
+    },
+    {
+      degree: 'Higher Secondary (12th), Science',
+      school: 'GSHSEB',
+      board: '2018 - 2019',
+      score: '68.46%',
+      duration: '2018 - 2019'
+    },
+    {
+      degree: 'Secondary School (10th)',
+      school: 'Shree New Gold School - Jesar',
+      board: 'GSEB',
+      score: '78.17%',
+      duration: '2016 - 2017'
     }
-    else{
-      this.commonService.theme.next(false)
-    }
+  ];
+
+  constructor(private commonService: CommonService) { }
+
+  ngOnInit() {
+    this.commonService.theme.subscribe((res) => {
+      this.themeMode = res === true ? false : true;
+    });
   }
 }

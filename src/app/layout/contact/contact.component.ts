@@ -1,8 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormControl,FormGroup,Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CommonService } from 'src/app/service/common.service';
-
 
 @Component({
   selector: 'app-contact',
@@ -10,90 +8,53 @@ import { CommonService } from 'src/app/service/common.service';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
-    
-
- 
-
-  preset: any = "uploadPreset";
-  themeMode:boolean=false;
-  cloudName: any = "dj7m5tuv9"
-  contactForm!:FormGroup;
-  successMessage:boolean=false;
-  errorMessage:boolean=false;
+  themeMode: boolean = false;
+  contactForm!: FormGroup;
+  successMessage: boolean = false;
+  errorMessage: boolean = false;
   generalErrorMessage: string | undefined;
-  generalErrorMessageShow:any=false;
-  constructor(private http: HttpClient, private commonService:CommonService) {
-  }
-  ngOnInit(){
+  generalErrorMessageShow: any = false;
+
+  constructor(private commonService: CommonService) { }
+
+  ngOnInit() {
     this.initForm();
-    this.commonService.theme.subscribe((res)=>{
-      if(res === true){
-        this.themeMode = false;
-      }
-      else{
-        this.themeMode = true;
-      }
-    })
+    this.commonService.theme.subscribe((res) => {
+      this.themeMode = res === true ? false : true;
+    });
   }
-  toggleTheme(data:any){
-    if (data==='dark'){
-      this.commonService.theme.next(true)
-    }
-    else{
-      this.commonService.theme.next(false)
+
+  toggleTheme(data: any) {
+    if (data === 'dark') {
+      this.commonService.theme.next(true);
+    } else {
+      this.commonService.theme.next(false);
     }
   }
-  initForm(){
-    this.contactForm = new FormGroup ({
-       name :new  FormControl('',Validators.required),
-       email: new FormControl( '', [Validators.required,Validators.email]),
-       subject: new FormControl( '', Validators.required),
-       message:new FormControl ('',)
-       });
-     }
+
+  initForm() {
+    this.contactForm = new FormGroup({
+      name: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      subject: new FormControl('', Validators.required),
+      message: new FormControl('')
+    });
+  }
+
   onSubmit(data: any) {
     if (this.contactForm.valid) {
-      this.generalErrorMessageShow=false;
-    const beforeFolderName = `${data.email}_${this.getFormattedDate()}`;
-    const folderPath = `portfolio data/contactUsData/${beforeFolderName}/`; 
-    const file = data;
-    const jsonData = JSON.stringify(data);
-    const blob = new Blob([jsonData], { type: 'application/json' });
-    const publicId = folderPath + file.name;
-    const formDataForUpload = new FormData();
-    formDataForUpload.append('file', blob, 'data.json');
-    formDataForUpload.append('upload_preset', this.preset);
-    formDataForUpload.append('cloud_name', this.cloudName);
-    formDataForUpload.append("public_id", publicId)
-    this.uploadTocloudinary(formDataForUpload)
+      this.generalErrorMessageShow = false;
+      const messages = JSON.parse(localStorage.getItem('contactMessages') || '[]');
+      messages.push({ ...data, date: new Date().toISOString() });
+      localStorage.setItem('contactMessages', JSON.stringify(messages));
+      this.successMessage = true;
+      this.contactForm.reset();
+      setTimeout(() => {
+        this.successMessage = false;
+      }, 3000);
+    } else {
+      this.generalErrorMessage = 'Please Enter all fields';
+      this.generalErrorMessageShow = true;
     }
-    else{
-      this.generalErrorMessage = 'Please Enter all fileds';
-      this.generalErrorMessageShow=true;
-    }
-  }
-  uploadTocloudinary(formData: any) {
-    this.http.post(`https://api.cloudinary.com/v1_1/${this.cloudName}/raw/upload/`, formData).subscribe((res) => {
-      if(res){
-        this.successMessage=true;
-       this.contactForm.reset();
-        setTimeout(()=>{
-          this.successMessage=false;
-        },3000)
-      }
-    },
-      (err) => {
-        this.errorMessage=true;
-        setTimeout(()=>{
-          this.errorMessage=false;
-        },3000)
-      })
-  }
-  getFormattedDate() {
-    const today = new Date();
-    const dd = String(today.getDate()).padStart(2, '0');
-    const mm = String(today.getMonth() + 1).padStart(2, '0'); 
-    const yyyy = today.getFullYear();
-    return `${yyyy}-${mm}-${dd}`;
   }
 }
