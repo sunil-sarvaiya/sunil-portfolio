@@ -1,56 +1,90 @@
-<div class="modal" *ngIf="successMessage" [ngClass]="themeMode ?'light-bg-light':''" >
-  <div class="success-dialog">
-    <i class="fas fa-check-circle"></i>
+<div class="modal-overlay" *ngIf="successMessage" (click)="successMessage = false">
+  <div class="success-dialog" [ngClass]="themeMode ? 'success-dialog-light' : ''">
+    <div class="success-icon">
+      <i class="fas fa-check"></i>
+    </div>
     <h1>Success!</h1>
     <p>Your Message has been sent!!!</p>
   </div>
 </div>
 
-<div class="modal" *ngIf="errorMessage" [ngClass]="themeMode ?'light-bg-light':''" >
-  <div class="success-dialog">
-    <i class="fa fa-exclamation-triangle"></i>
+<div class="modal-overlay" *ngIf="errorMessage" (click)="errorMessage = false">
+  <div class="success-dialog error-dialog" [ngClass]="themeMode ? 'success-dialog-light' : ''">
+    <div class="success-icon error">
+      <i class="fas fa-times"></i>
+    </div>
     <h1>Error!</h1>
     <p>Something went wrong!!</p>
   </div>
 </div>
 
-<div id="contact" class="contact" [ngClass]="themeMode ?'light-bg-light':''">
+<div class="contact-section" [ngClass]="themeMode ? 'light-bg' : ''">
   <div class="container">
-    <div class="section-title">
-      <h2 [ngClass]="themeMode ?'light-font-color':''">Contact</h2>
-      <p [ngClass]="themeMode ?'light-font-color':''">Contact Me</p>
+    <div class="section-title" [ngClass]="themeMode ? 'light-font-color' : ''">
+      <h2>Contact</h2>
+      <p>Get In Touch</p>
     </div>
-    <form  class="php-email-form mt-4 " [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
-      <div *ngIf="generalErrorMessageShow" class="mb-3">
-        <span class="text-danger">
-          {{generalErrorMessage}}
-        </span>
-      </div>
-      <div class="row">
-        <div class="col-md-6 form-group">
-          <input type="text" name="name" class="form-control" formControlName="name" id="name" placeholder="Your Name" >
-          <span *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="text-danger">
-            Please enter your name.
-          </span>
-        </div>
-        <div class="col-md-6 form-group mt-3 mt-md-0">
-          <input type="email" class="form-control" name="email" formControlName="email" id="email" placeholder="Your Email" >
-          <span *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="text-danger">
-            Please enter your email.
-          </span>
-        </div>
-      </div>
-      <div class="form-group mt-3">
-        <input type="text" class="form-control" name="subject" formControlName="subject" id="subject" placeholder="Subject" >
-        <span *ngIf="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched" class="text-danger">
-          Please enter your subject.
-        </span>
-      </div>
-      <div class="form-group mt-3">
-        <textarea class="form-control" name="message" rows="5" formControlName="message" placeholder="Message" ></textarea>
-      </div>
-      <div class="text-center my-3"><button class="submit-btn"  type="submit" [ngClass]="themeMode ?'light-font-color':''">Send Message</button></div>
-    </form>
 
+    <div class="contact-wrapper">
+      <div class="contact-info" [ngClass]="themeMode ? 'contact-info-light' : ''">
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <h5>Email</h5>
+            <p>sunil.sarvaiya@email.com</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <h5>Location</h5>
+            <p>Ahmedabad, Gujarat</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-briefcase"></i></div>
+          <div>
+            <h5>Availability</h5>
+            <p>Open to opportunities</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper" [ngClass]="themeMode ? 'form-light' : ''">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
+          <div *ngIf="generalErrorMessageShow" class="form-error">
+            <i class="fas fa-exclamation-circle"></i>
+            {{ generalErrorMessage }}
+          </div>
+          <div class="form-row">
+            <div class="form-group-custom">
+              <input type="text" formControlName="name" placeholder="Your Name" class="input-custom">
+              <span class="field-error" *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+                Please enter your name.
+              </span>
+            </div>
+            <div class="form-group-custom">
+              <input type="email" formControlName="email" placeholder="Your Email" class="input-custom">
+              <span class="field-error" *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+                Please enter a valid email.
+              </span>
+            </div>
+          </div>
+          <div class="form-group-custom">
+            <input type="text" formControlName="subject" placeholder="Subject" class="input-custom">
+            <span class="field-error" *ngIf="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched">
+              Please enter a subject.
+            </span>
+          </div>
+          <div class="form-group-custom">
+            <textarea formControlName="message" rows="5" placeholder="Your Message" class="input-custom textarea-custom"></textarea>
+          </div>
+          <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i>
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
   </div>
 </div>

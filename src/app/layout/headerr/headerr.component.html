@@ -1,26 +1,25 @@
-<div [ngClass]="themeMode ?'header-main':''">
-    <nav>
-        <input type="checkbox" id="nav-toggle">
+<div [ngClass]="themeMode ? 'header-main' : ''">
+  <nav>
+    <input type="checkbox" id="nav-toggle">
 
-        <ul class="links">
+    <a class="logo" routerLink="/home">
+      <span class="logo-bracket">&lt;</span>
+      <span class="logo-text">Sunil</span>
+      <span class="logo-bracket">/&gt;</span>
+    </a>
 
-            <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-            <li><a routerLink="projects" routerLinkActive="active">Projects</a></li>
-            <li><a routerLink="/about" routerLinkActive="active">About</a></li>
-            <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
-            <li><a routerLink="/experience" routerLinkActive="active">Experience</a></li>
-        </ul>
-        <label for="nav-toggle" class="icon-burger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </label>
-    </nav>
-
+    <ul class="links">
+      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="projects" routerLinkActive="active">Projects</a></li>
+      <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+      <li><a routerLink="/experience" routerLinkActive="active">Experience</a></li>
+    </ul>
 
     <label for="nav-toggle" class="icon-burger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
     </label>
+  </nav>
 </div>

@@ -1,77 +1,336 @@
 @import '../../../assets/variables';
 
-.about{
-    padding: 100px 0px 50px 0px;
-    background-color: $black-color;
-    min-height: 100vh;
-    height: auto;
+.about-section {
+  background-color: $black-color;
+  padding: 100px 0;
+  min-height: 100vh;
+}
+
+// About Intro
+.about-intro {
+  margin-bottom: 20px;
+}
+
+.role-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: $primary-color;
+  margin-bottom: 16px;
+}
+
+.about-text {
+  color: $text-muted;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+
+  strong { color: $white-color; }
+}
+
+// Info Grid
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  background: $card-bg;
+  border: 1px solid $card-border;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $card-border-hover;
+    transform: translateY(-2px);
+  }
+
+  i {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 8px;
+    background: rgba($primary-color, 0.15);
+    color: $primary-color;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    font-size: 15px;
+  }
 }
 
-.light-font-color{
-    color: $black-color;
+.info-label {
+  display: block;
+  font-size: 12px;
+  color: $text-muted;
+  margin-bottom: 2px;
 }
 
-.content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.info-value {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: $white-color;
 }
-.services{
-    padding: 0px 0px 150px 0px;
-    background-color: $black-color;
-}
-.see-details-class{
-    background-color: transparent;
-    color: $white-color;
-    padding: 10px 20px;
-    border: 2px solid $white-color;
-    border-radius: 6px;
 
-    &:hover{
-      background-color: $dark-primary-color !important;
-      border-color: $dark-primary-color ;
+// Skills
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.skill-card {
+  background: $card-bg;
+  border: 1px solid $card-border;
+  border-radius: 12px;
+  padding: 24px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $card-border-hover;
+    transform: translateY(-5px);
+    box-shadow: $glow-primary;
+
+    .skill-icon {
+      background: $primary-color;
+      color: $white-color;
+      box-shadow: $glow-primary;
     }
   }
-  .about-me .content h3 {
-    font-weight: 700;
-    font-size: 26px;
-    color: #ed0e55;
+}
+
+.skill-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba($primary-color, 0.1);
+  color: $primary-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin: 0 auto 14px;
+  transition: all 0.3s ease;
+}
+
+.skill-card h5 {
+  font-size: 14px;
+  font-weight: 600;
+  color: $white-color;
+  margin-bottom: 12px;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, $primary-color, $dark-primary-color);
+  border-radius: 2px;
+  transition: width 1s ease;
+}
+
+.skill-level {
+  font-size: 12px;
+  color: $text-muted;
+  font-weight: 500;
+}
+
+// Education Timeline
+.education-timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, $primary-color, $dark-primary-color);
   }
-  
-  .about-me .content ul {
-    list-style: none;
-    padding: 0;
+}
+
+.edu-item {
+  position: relative;
+  padding-left: 55px;
+  margin-bottom: 30px;
+
+  &:last-child { margin-bottom: 0; }
+}
+
+.edu-dot {
+  position: absolute;
+  left: 12px;
+  top: 25px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: $primary-color;
+  border: 3px solid $black-color;
+  box-shadow: 0 0 12px rgba($primary-color, 0.5);
+  z-index: 1;
+}
+
+.edu-card {
+  background: $card-bg;
+  border: 1px solid $card-border;
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $card-border-hover;
+    box-shadow: $glow-primary;
+    transform: translateX(5px);
   }
-  
-  .about-me .content ul li {
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .about-me .content ul strong {
-    margin-right: 10px;
-  }
-  
-  .about-me .content ul i {
-    font-size: 16px;
-    margin-right: 5px;
-    color: #ed0e55;
-    line-height: 0;
-  }
-  
-  .about-me .content p:last-child {
-    margin-bottom: 0;
+}
+
+.edu-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.edu-icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 10px;
+  background: rgba($primary-color, 0.15);
+  color: $primary-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.edu-card h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: $white-color;
+  margin-bottom: 2px;
+}
+
+.edu-date {
+  font-size: 12px;
+  color: $primary-color;
+  font-weight: 500;
+}
+
+.edu-school {
+  color: $text-muted;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.edu-board {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.edu-score {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba($primary-color, 0.1);
+  color: $primary-color;
+  border: 1px solid rgba($primary-color, 0.2);
+}
+
+// Light Mode
+.light-font-color { color: $black-color !important; }
+
+.about-light {
+  background-color: $light-mode-bg-color;
+
+  .role-title { color: darken($primary-color, 10%); }
+  .about-text { color: rgba($black-color, 0.7); }
+  .about-text strong { color: $black-color; }
+
+  .info-item {
+    background: $light-card-bg;
+    border-color: $light-card-border;
+    &:hover { border-color: rgba($primary-color, 0.5); }
   }
 
+  .info-label { color: rgba($black-color, 0.5); }
+  .info-value { color: $black-color; }
 
-  .light-bg-light{
-    background-color: $light-mode-bg-color!important;
-    p,h4,h2,h3,span,strong{
-      color: $light-font-color !important;
+  .skill-card {
+    background: $light-card-bg;
+    border-color: $light-card-border;
+    &:hover {
+      border-color: rgba($primary-color, 0.5);
+      box-shadow: 0 8px 25px rgba($primary-color, 0.12);
     }
+  }
+
+  .skill-card h5 { color: $black-color; }
+  .skill-bar { background: rgba(0, 0, 0, 0.1); }
+
+  .education-timeline::before {
+    background: linear-gradient(to bottom, $primary-color, darken($primary-color, 20%));
+  }
+
+  .edu-dot { border-color: $light-mode-bg-color; }
+
+  .edu-card {
+    background: $light-card-bg;
+    border-color: $light-card-border;
+    &:hover {
+      border-color: rgba($primary-color, 0.5);
+      box-shadow: 0 8px 25px rgba($primary-color, 0.12);
+    }
+  }
+
+  .edu-card h4 { color: $black-color; }
+  .edu-school { color: rgba($black-color, 0.7); }
+  .edu-board { color: rgba($black-color, 0.5); }
+}
+
+// Responsive
+@media (max-width: 992px) {
+  .about-section { padding: 80px 0; }
+  .skills-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .about-section { padding: 60px 0; }
+  .info-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: repeat(3, 1fr); }
+  .role-title { font-size: 24px; }
+}
+
+@media (max-width: 576px) {
+  .about-section { padding: 50px 16px; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .role-title { font-size: 22px; }
+  .about-text { font-size: 13px; }
+  .info-item { padding: 12px; }
+  .skill-card { padding: 18px 14px; }
+  .skill-icon { width: 42px; height: 42px; font-size: 18px; }
+
+  .education-timeline::before { left: 12px; }
+  .edu-item { padding-left: 38px; }
+  .edu-dot { left: 4px; width: 16px; height: 16px; }
+  .edu-card { padding: 18px 14px; }
 }
