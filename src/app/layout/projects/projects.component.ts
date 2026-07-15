@@ -11,28 +11,40 @@ export class ProjectsComponent {
 
   projects = [
     {
-      title: 'Techtose Company Website',
+      title: 'Techtose — Company Website',
       icon: 'fas fa-building',
-      description: 'Developed the official site using Bootstrap, Cloudinary for storage, and integrated Slick Slider for enhanced UX.',
-      tech: ['Responsive design using Bootstrap', 'Cloudinary used for media storage', 'Integrated Slick Slider', 'Interactive case study section']
+      description: 'Designed and developed a cross-device compatible company website using Angular and Bootstrap. Integrated Cloudinary for cloud image management and Slick Slider for smooth content transitions.',
+      tech: ['Angular', 'Bootstrap', 'Cloudinary', 'Slick Slider', 'Dynamic case study showcase']
     },
     {
-      title: 'Carbon Block (SaaS Platform)',
+      title: 'Carbon Block — SaaS Web App',
       icon: 'fas fa-cloud',
-      description: 'Contributed to development of Carbon Block using Angular and NGRX for scalable architecture.',
-      tech: ['Implemented key UI features using PrimeNG', 'Used NGRX for state management', 'Enhanced performance and UX']
+      description: 'Contributed to the Carbon Block SaaS platform by implementing new features using Angular, PrimeNG, and PrimeFlex. Built reusable UI components to maintain consistency across the platform.',
+      tech: ['Angular', 'PrimeNG', 'PrimeFlex', 'Reusable UI Components']
     },
     {
       title: 'ACA Compliance Alpha',
       icon: 'fas fa-shield-alt',
-      description: 'RegTech platform for compliance solutions; worked on Angular front-end and automated testing.',
-      tech: ['End-to-end tests using Playwright', 'Unit tests using Jest', 'Implemented grid filters, server-side export']
+      description: 'Developed grid filtering and server-side export features using Angular and DevExtreme. Wrote comprehensive Playwright E2E tests and Jest unit tests to ensure feature reliability.',
+      tech: ['Angular', 'DevExtreme', 'Playwright', 'Jest', 'Grid Filtering', 'Server-side Export']
     },
     {
-      title: 'SafetyCube Platform',
+      title: 'SafetyCube — Aviation Safety Platform',
       icon: 'fas fa-plane',
-      description: 'Aviation safety and risk management tool with three functional interfaces.',
-      tech: ['Cube: Safety reports, audits, risks', 'Portal: User reporting and collaboration', 'Admin: Configuration and access control', 'Enhanced table features, optimized performance']
+      description: 'Developed features across Cube, Portal, and Admin modules for an airline/airport safety management platform. Implemented table sorting, filtering, and export functionality.',
+      tech: ['Angular', 'Caching', 'trackBy', 'Dynamic Dialogs', 'Memory Leak Fixes']
+    },
+    {
+      title: 'Easy Compliance — Compliance Platform',
+      icon: 'fas fa-check-double',
+      description: 'Implemented new UI features and improved existing functionalities using Angular and the Solidrange shared library. Ensured consistent UI/UX across all modules.',
+      tech: ['Angular', 'Solidrange Library', 'Bug Fixes', 'Performance Optimization']
+    },
+    {
+      title: 'Vapi Call Assistant — AI Interview Scheduler',
+      icon: 'fas fa-robot',
+      description: 'Built an AI call assistant using Vapi that automatically contacts candidates and conducts screening. Designed an n8n workflow to process responses and schedule interviews.',
+      tech: ['Vapi AI', 'n8n Workflow', 'Google Calendar', 'Google Meet', 'Excel Integration']
     }
   ];
 

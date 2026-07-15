@@ -90,6 +90,13 @@ h4 {
   font-weight: 500;
 }
 
+.timeline-role {
+  display: block;
+  font-size: 13px;
+  color: $text-muted;
+  margin-bottom: 2px;
+}
+
 .timeline-card > p {
   color: $text-muted;
   font-size: 14px;

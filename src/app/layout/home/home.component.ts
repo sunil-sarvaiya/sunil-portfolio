@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonService } from 'src/app/service/common.service';
+import { homedata } from 'src/assets/data';
 
 @Component({
   selector: 'app-home',
@@ -13,14 +14,7 @@ export class HomeComponent {
   constructor(private commonService: CommonService) { }
 
   ngOnInit() {
-    this.commonService.getAllData().subscribe(
-      (res: any) => {
-        this.homeData = res['homedata'];
-      },
-      (error) => {
-        console.error('Error fetching data:', error);
-      }
-    );
+    this.homeData = homedata;
 
     this.commonService.theme.subscribe((res) => {
       if (res === true) {
@@ -40,9 +34,9 @@ export class HomeComponent {
     }
   }
   downloadPdf() {
-    const pdfPath = 'assets/sunil_final_resume.pdf';
-    window.open(pdfPath, '_blank');
-
-
+    const link = document.createElement('a');
+    link.href = 'assets/Sarvaiya Sunil\'s Resume.pdf';
+    link.download = 'Sarvaiya Sunil\'s Resume.pdf';
+    link.click();
   }
 }
