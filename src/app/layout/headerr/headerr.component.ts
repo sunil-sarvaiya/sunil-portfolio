@@ -12,6 +12,7 @@ export class HeaderrComponent {
   themeMode: boolean = false;
   menuOpen: boolean = false;
   isScrolled: boolean = false;
+  currentRoute: string = '/home';
 
   constructor(private commonService: CommonService, private router: Router) { }
 
@@ -22,10 +23,15 @@ export class HeaderrComponent {
 
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
-    ).subscribe(() => {
+    ).subscribe((event: any) => {
+      this.currentRoute = event.urlAfterRedirects || event.url;
       this.menuOpen = false;
       document.body.style.overflow = '';
     });
+  }
+
+  navigate(path: string) {
+    this.router.navigate([path]);
   }
 
   toggleMenu() {
