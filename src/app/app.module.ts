@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ExperienceComponent } from './layout/experience/experience.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderrComponent } from './layout/headerr/headerr.component';
+import { ScrollRevealDirective } from './scroll-reveal.directive';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { HeaderrComponent } from './layout/headerr/headerr.component';
     ContactComponent,
     ProjectsComponent,
     ExperienceComponent,
-    HeaderrComponent
+    HeaderrComponent,
+    ScrollRevealDirective
   ],
   imports: [
     BrowserModule,

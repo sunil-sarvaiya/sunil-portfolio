@@ -1,4 +1,4 @@
-<div [ngClass]="themeMode ? 'header-main' : ''">
+<div class="header-main" [class.header-light]="themeMode" [class.scrolled]="isScrolled">
   <nav>
     <a class="logo" routerLink="/home">
       <span class="logo-bracket">&lt;</span>
@@ -6,18 +6,20 @@
       <span class="logo-bracket">/&gt;</span>
     </a>
 
-    <ul class="links" [class.open]="menuOpen">
-      <li><a routerLink="/home" routerLinkActive="active" (click)="closeMenu()">Home</a></li>
-      <li><a routerLink="projects" routerLinkActive="active" (click)="closeMenu()">Projects</a></li>
-      <li><a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About</a></li>
-      <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a></li>
-      <li><a routerLink="/experience" routerLinkActive="active" (click)="closeMenu()">Experience</a></li>
+    <ul class="nav-links" [class.open]="menuOpen">
+      <li><a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
+      <li><a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">About</a></li>
+      <li><a routerLink="/experience" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Experience</a></li>
+      <li><a routerLink="/projects" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Projects</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Contact</a></li>
     </ul>
 
-    <div class="icon-burger" [class.open]="menuOpen" (click)="toggleMenu()">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
+    <button class="nav-toggle" [class.open]="menuOpen" (click)="toggleMenu()" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
+
+  <div class="menu-overlay" [class.open]="menuOpen" (click)="closeMenu()"></div>
 </div>

@@ -53,6 +53,16 @@ a {
 .section-title {
   margin-bottom: 50px;
 
+  .section-number {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: $primary-color;
+    margin-bottom: 6px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
   h2 {
     font-size: 14px;
     font-weight: 500;
