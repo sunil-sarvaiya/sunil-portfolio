@@ -7,36 +7,17 @@ import { ProjectsComponent } from './layout/projects/projects.component';
 import { ExperienceComponent } from './layout/experience/experience.component';
 
 const routes: Routes = [
-  {
-    path:'home',
-    component:HomeComponent,
-
-  },
-  {
-    path:'about',
-    component:AboutComponent
-  },
-  {
-    path:'contact',
-    component:ContactComponent
-  },
-  {
-    path:'projects',
-    component:ProjectsComponent
-  },
-  {
-    path:'experience',
-    component:ExperienceComponent
-  },
-  {
-    path:'**',
-    component:HomeComponent
-  }
-
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'projects', component: ProjectsComponent },
+  { path: 'experience', component: ExperienceComponent },
+  { path: '**', redirectTo: '/home' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
