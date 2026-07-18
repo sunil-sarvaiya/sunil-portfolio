@@ -3,7 +3,7 @@
 .experience-section {
   background-color: $black-color;
   min-height: 100vh;
-  padding: 100px 0;
+  padding: 90px 0 100px;
 }
 
 .timeline {
@@ -149,11 +149,11 @@ h4 {
 .light-font-color { color: $black-color !important; }
 
 @media (max-width: 992px) {
-  .experience-section { padding: 80px 0; }
+  .experience-section { padding: 90px 0 80px; }
 }
 
 @media (max-width: 768px) {
-  .experience-section { padding: 60px 0; }
+  .experience-section { padding: 90px 0 60px; }
 
   .timeline {
     padding-left: 0;
@@ -177,7 +177,7 @@ h4 {
 }
 
 @media (max-width: 576px) {
-  .experience-section { padding: 50px 16px; }
+  .experience-section { padding: 90px 16px 50px; }
 
   .timeline::before { left: 8px; }
 
