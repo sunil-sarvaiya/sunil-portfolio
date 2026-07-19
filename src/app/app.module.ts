@@ -12,8 +12,9 @@ import { ProjectsComponent } from './layout/projects/projects.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ExperienceComponent } from './layout/experience/experience.component';
 import { HttpClientModule } from '@angular/common/http';
-import { HeaderrComponent } from './layout/headerr/headerr.component';
+import { HeaderComponent } from './layout/header/header.component';
 import { ScrollRevealDirective } from './scroll-reveal.directive';
+import { SinglepageComponent } from './layout/singlepage/singlepage.component';
 
 
 @NgModule({
@@ -25,8 +26,9 @@ import { ScrollRevealDirective } from './scroll-reveal.directive';
     ContactComponent,
     ProjectsComponent,
     ExperienceComponent,
-    HeaderrComponent,
-    ScrollRevealDirective
+    HeaderComponent,
+    ScrollRevealDirective,
+    SinglepageComponent
   ],
   imports: [
     BrowserModule,

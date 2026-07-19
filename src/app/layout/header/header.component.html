@@ -1,0 +1,31 @@
+<div class="header-main" [class.scrolled]="isScrolled">
+  <nav>
+    <a class="logo" (click)="scrollTo('home')">
+      <span class="logo-bracket">&lt;</span>
+      <span class="logo-text">Sunil</span>
+      <span class="logo-bracket">/&gt;</span>
+    </a>
+
+    <ul class="nav-links" [class.open]="menuOpen">
+      <li><a (click)="scrollTo('home')" [class.active]="activeSection === 'home'">Home</a></li>
+      <li><a (click)="scrollTo('about')" [class.active]="activeSection === 'about'">About</a></li>
+      <li><a (click)="scrollTo('experience')" [class.active]="activeSection === 'experience'">Experience</a></li>
+      <li><a (click)="scrollTo('projects')" [class.active]="activeSection === 'projects'">Projects</a></li>
+      <li><a (click)="scrollTo('contact')" [class.active]="activeSection === 'contact'">Contact</a></li>
+    </ul>
+
+    <div class="nav-overlay" [class.open]="menuOpen" (click)="closeMenu()"></div>
+
+    <div class="nav-right">
+      <button class="theme-toggle" (click)="toggleTheme()" [attr.aria-label]="themeMode ? 'Switch to dark mode' : 'Switch to light mode'">
+        <i class="fas" [ngClass]="themeMode ? 'fa-moon' : 'fa-sun'"></i>
+      </button>
+
+      <button class="nav-toggle" [class.open]="menuOpen" (click)="toggleMenu()" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</div>

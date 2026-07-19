@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CommonService } from 'src/app/service/common.service';
 
 @Component({
   selector: 'app-about',
@@ -7,7 +6,6 @@ import { CommonService } from 'src/app/service/common.service';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {
-  themeMode: boolean = false;
 
   education = [
     {
@@ -33,11 +31,5 @@ export class AboutComponent {
     }
   ];
 
-  constructor(private commonService: CommonService) { }
-
-  ngOnInit() {
-    this.commonService.theme.subscribe((res) => {
-      this.themeMode = res === true ? false : true;
-    });
-  }
+  constructor() { }
 }

@@ -1,9 +1,9 @@
 @import '../../../assets/variables';
 
 .contact-section {
-  background-color: $black-color;
-  padding: 100px 0;
-  min-height: 100vh;
+  background-color: var(--bg-primary);
+  padding: 40px 0 100px;
+  transition: background-color 0.3s ease;
 }
 
 .contact-wrapper {
@@ -25,13 +25,14 @@
   align-items: center;
   gap: 16px;
   padding: 20px;
-  background: $card-bg;
-  border: 1px solid $card-border;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   transition: all 0.3s ease;
+  cursor: pointer;
 
   &:hover {
-    border-color: $card-border-hover;
+    border-color: var(--border-hover);
     transform: translateX(5px);
   }
 }
@@ -52,22 +53,23 @@
 h5 {
   font-size: 15px;
   font-weight: 600;
-  color: $white-color;
+  color: var(--text-primary);
   margin-bottom: 2px;
 }
 
 .info-card p {
   font-size: 13px;
-  color: $text-muted;
+  color: var(--text-secondary);
   margin: 0;
 }
 
 .contact-form-wrapper {
-  background: $card-bg;
-  border: 1px solid $card-border;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 35px;
   backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .form-row {
@@ -83,22 +85,21 @@ h5 {
 .input-custom {
   width: 100%;
   padding: 14px 18px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid $card-border;
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
   border-radius: 10px;
-  color: $white-color;
+  color: var(--text-primary);
   font-size: 14px;
   font-family: 'Poppins', sans-serif;
   transition: all 0.3s ease;
   outline: none;
 
   &::placeholder {
-    color: rgba(255, 255, 255, 0.3);
+    color: var(--input-placeholder);
   }
 
   &:focus {
     border-color: $primary-color;
-    background: rgba(255, 255, 255, 0.08);
     box-shadow: 0 0 12px rgba($primary-color, 0.15);
   }
 }
@@ -147,6 +148,7 @@ h5 {
 
   &:hover {
     background: transparent;
+    color: $primary-color;
     box-shadow: $glow-primary-strong;
   }
 }
@@ -167,8 +169,8 @@ h5 {
 }
 
 .success-dialog {
-  background: $card-bg;
-  border: 1px solid $card-border;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 40px;
   text-align: center;
@@ -197,44 +199,13 @@ h5 {
 
 .success-dialog h1 {
   font-size: 22px;
-  color: $white-color;
+  color: var(--text-primary);
   margin-bottom: 8px;
 }
 
 .success-dialog p {
   font-size: 14px;
-  color: $text-muted;
-}
-
-.light-font-color { color: $black-color !important; }
-.light-bg { background-color: $light-mode-bg-color !important; }
-
-.info-card-light {
-  background: $light-card-bg;
-  border-color: $light-card-border;
-  h5 { color: $black-color; }
-  p { color: rgba($black-color, 0.6); }
-  &:hover { border-color: rgba($primary-color, 0.5); }
-}
-
-.form-light {
-  background: $light-card-bg;
-  border-color: $light-card-border;
-
-  .input-custom {
-    background: rgba(0, 0, 0, 0.03);
-    border-color: $light-card-border;
-    color: $black-color;
-    &::placeholder { color: rgba($black-color, 0.4); }
-    &:focus { border-color: $primary-color; }
-  }
-}
-
-.success-dialog-light {
-  background: $white-color;
-  border-color: $light-card-border;
-  h1 { color: $black-color; }
-  p { color: rgba($black-color, 0.6); }
+  color: var(--text-secondary);
 }
 
 @keyframes fadeInUp {
@@ -243,20 +214,17 @@ h5 {
 }
 
 @media (max-width: 992px) {
-  .contact-section { padding: 80px 0; }
+  .contact-section { padding: 30px 0 80px; }
 }
 
 @media (max-width: 768px) {
-  .contact-section { padding: 60px 0; }
-  .contact-wrapper {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
+  .contact-section { padding: 30px 0 60px; }
+  .contact-wrapper { grid-template-columns: 1fr; gap: 30px; }
   .contact-form-wrapper { padding: 28px 20px; }
 }
 
 @media (max-width: 576px) {
-  .contact-section { padding: 50px 16px; }
+  .contact-section { padding: 30px 16px 50px; }
   .form-row { grid-template-columns: 1fr; }
   .contact-form-wrapper { padding: 24px 16px; }
   .info-card { padding: 16px; gap: 12px; }

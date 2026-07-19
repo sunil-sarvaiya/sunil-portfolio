@@ -11,21 +11,21 @@
     justify-content: space-between;
     align-items: center;
     height: 70px;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: var(--nav-bg);
     backdrop-filter: blur(12px);
     padding: 0 5%;
     transition: all 0.3s ease;
   }
 
   &.scrolled nav {
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: var(--nav-bg-scrolled);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
   }
 
   .logo {
     font-size: 20px;
     font-weight: 700;
-    color: $white-color;
+    color: var(--text-primary);
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -39,7 +39,7 @@
       font-weight: 400;
     }
 
-    .logo-text { color: $white-color; }
+    .logo-text { color: var(--text-primary); }
     &:hover .logo-text { color: $primary-color; }
   }
 
@@ -57,7 +57,7 @@
       padding: 8px 14px;
       font-size: 14px;
       font-weight: 500;
-      color: $text-muted;
+      color: var(--text-secondary);
       text-decoration: none;
       position: relative;
       letter-spacing: 0.5px;
@@ -77,18 +77,44 @@
       }
 
       &:hover {
-        color: $white-color;
+        color: var(--text-primary);
         &::after { width: 60%; }
       }
     }
   }
 
-  // Overlay - hidden on desktop
   .nav-overlay {
     display: none;
   }
 
-  // Hamburger button
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 30;
+  }
+
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: $primary-color;
+      color: $primary-color;
+      transform: rotate(20deg);
+    }
+  }
+
   .nav-toggle {
     display: none;
     flex-direction: column;
@@ -105,7 +131,7 @@
       display: block;
       width: 26px;
       height: 2px;
-      background-color: $white-color;
+      background-color: var(--text-primary);
       border-radius: 2px;
       transition: all 0.3s ease;
       transform-origin: center;
@@ -129,36 +155,6 @@
   &::after { width: 60% !important; }
 }
 
-// Light mode
-.header-main.header-light {
-  nav {
-    background-color: rgba(255, 255, 255, 0.95) !important;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-  }
-
-  &.scrolled nav {
-    background-color: rgba(255, 255, 255, 0.98) !important;
-  }
-
-  .logo {
-    .logo-bracket { color: $primary-color; }
-    .logo-text { color: $black-color; }
-    &:hover .logo-text { color: $primary-color; }
-  }
-
-  .nav-links a {
-    color: rgba($black-color, 0.6);
-    &:hover { color: $black-color; }
-    &::after { background-color: $black-color; }
-  }
-
-  .active { color: $black-color !important; }
-
-  .nav-toggle span {
-    background-color: $black-color;
-  }
-}
-
 // ============ RESPONSIVE ============
 
 @media screen and (max-width: 992px) {
@@ -176,7 +172,6 @@
 
     .nav-toggle { display: flex; }
 
-    // Overlay inside nav - same stacking context as nav-links
     .nav-overlay {
       display: block;
       position: fixed;
@@ -184,7 +179,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5);
+      background: var(--overlay-bg);
       z-index: 1;
       opacity: 0;
       visibility: hidden;
@@ -206,13 +201,13 @@
       justify-content: center;
       align-items: center;
       gap: 0;
-      background-color: rgba(15, 15, 15, 0.98);
+      background-color: var(--nav-mobile-bg);
       backdrop-filter: blur(20px);
       transform: translateX(100%);
       transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
       padding: 80px 0 40px;
       z-index: 2;
-      box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+      box-shadow: var(--nav-mobile-shadow);
 
       &.open {
         transform: translateX(0);
@@ -221,7 +216,7 @@
       a {
         font-size: 17px;
         padding: 16px 24px;
-        color: $text-muted !important;
+        color: var(--text-secondary) !important;
         text-transform: uppercase;
         letter-spacing: 1.5px;
         font-weight: 500;

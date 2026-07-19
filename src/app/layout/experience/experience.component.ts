@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CommonService } from 'src/app/service/common.service';
 
 @Component({
   selector: 'app-experience',
@@ -7,7 +6,6 @@ import { CommonService } from 'src/app/service/common.service';
   styleUrls: ['./experience.component.scss']
 })
 export class ExperienceComponent {
-  themeMode: boolean = false;
 
   experiences = [
     {
@@ -28,11 +26,5 @@ export class ExperienceComponent {
     }
   ];
 
-  constructor(private commonService: CommonService) { }
-
-  ngOnInit() {
-    this.commonService.theme.subscribe((res) => {
-      this.themeMode = res === true ? false : true;
-    });
-  }
+  constructor() { }
 }

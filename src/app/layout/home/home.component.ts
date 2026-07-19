@@ -1,5 +1,4 @@
 import { Component, OnDestroy, AfterViewInit } from '@angular/core';
-import { CommonService } from 'src/app/service/common.service';
 import { homedata } from 'src/assets/data';
 
 @Component({
@@ -8,43 +7,33 @@ import { homedata } from 'src/assets/data';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements AfterViewInit, OnDestroy {
-  themeMode: boolean = false;
   homeData: any;
 
   displayText = '';
-  animatedYears = 0;
-  animatedProjects = 0;
-  animatedClients = 0;
 
-  private typingWords = ['Angular Developer', 'Frontend Developer', 'UI/UX Enthusiast'];
+  private typingWords = ['Angular Developer'];
   private wordIndex = 0;
   private charIndex = 0;
   private isDeleting = false;
   private typingTimer: any;
-  private counterTimer: any;
   private particleCanvas: HTMLCanvasElement | null = null;
   private particleCtx: CanvasRenderingContext2D | null = null;
   private particles: any[] = [];
   private animationFrameId: any;
 
-  constructor(private commonService: CommonService) { }
+  constructor() { }
 
   ngOnInit() {
     this.homeData = homedata;
-    this.commonService.theme.subscribe((res) => {
-      this.themeMode = res === true ? false : true;
-    });
   }
 
   ngAfterViewInit() {
     this.startTyping();
-    this.startCounters();
     this.initParticles();
   }
 
   ngOnDestroy() {
     clearTimeout(this.typingTimer);
-    clearInterval(this.counterTimer);
     if (this.animationFrameId) {
       cancelAnimationFrame(this.animationFrameId);
     }
@@ -74,31 +63,9 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     this.typingTimer = setTimeout(() => this.startTyping(), speed);
   }
 
-  startCounters() {
-    const targets = { years: 3, projects: 6, clients: 3 };
-    const duration = 2000;
-    const steps = 60;
-    const interval = duration / steps;
-    let step = 0;
-
-    this.counterTimer = setInterval(() => {
-      step++;
-      const progress = step / steps;
-      const easeOut = 1 - Math.pow(1 - progress, 3);
-
-      this.animatedYears = Math.round(targets.years * easeOut);
-      this.animatedProjects = Math.round(targets.projects * easeOut);
-      this.animatedClients = Math.round(targets.clients * easeOut);
-
-      if (step >= steps) {
-        clearInterval(this.counterTimer);
-      }
-    }, interval);
-  }
-
   initParticles() {
     this.particleCanvas = document.getElementById('particleCanvas') as HTMLCanvasElement;
-    if (!this.particleCanvas) return;
+    if (!this.particleCanvas || !this.particleCanvas.getContext) return;
 
     this.particleCtx = this.particleCanvas.getContext('2d');
     this.resizeCanvas();
@@ -163,14 +130,6 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     });
 
     this.animationFrameId = requestAnimationFrame(() => this.animateParticles());
-  }
-
-  toggleTheme(data: any) {
-    if (data === 'dark') {
-      this.commonService.theme.next(true);
-    } else {
-      this.commonService.theme.next(false);
-    }
   }
 
   downloadPdf() {

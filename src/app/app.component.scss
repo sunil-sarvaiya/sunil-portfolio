@@ -23,11 +23,6 @@
     transform: translateY(-4px);
     box-shadow: $glow-primary-strong;
   }
-
-  &.main-section-light {
-    background: $primary-color;
-    box-shadow: $glow-primary;
-  }
 }
 
 @keyframes fadeIn {

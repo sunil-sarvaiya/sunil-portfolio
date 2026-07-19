@@ -1,12 +1,11 @@
 @import '../../../assets/variables';
 
 .about-section {
-  background-color: $black-color;
-  padding: 100px 0;
-  min-height: 100vh;
+  background-color: var(--bg-primary);
+  padding: 40px 0 100px;
+  transition: background-color 0.3s ease;
 }
 
-// About Intro
 .about-intro {
   margin-bottom: 20px;
 }
@@ -19,15 +18,14 @@
 }
 
 .about-text {
-  color: $text-muted;
+  color: var(--text-secondary);
   font-size: 15px;
   line-height: 1.8;
   margin-bottom: 24px;
 
-  strong { color: $white-color; }
+  strong { color: var(--text-primary); }
 }
 
-// Info Grid
 .info-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -39,13 +37,14 @@
   align-items: center;
   gap: 14px;
   padding: 16px;
-  background: $card-bg;
-  border: 1px solid $card-border;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   transition: all 0.3s ease;
+  cursor: pointer;
 
   &:hover {
-    border-color: $card-border-hover;
+    border-color: var(--border-hover);
     transform: translateY(-2px);
   }
 
@@ -66,7 +65,7 @@
 .info-label {
   display: block;
   font-size: 12px;
-  color: $text-muted;
+  color: var(--text-secondary);
   margin-bottom: 2px;
 }
 
@@ -74,10 +73,9 @@
   display: block;
   font-size: 14px;
   font-weight: 600;
-  color: $white-color;
+  color: var(--text-primary);
 }
 
-// Skills
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -85,15 +83,16 @@
 }
 
 .skill-card {
-  background: $card-bg;
-  border: 1px solid $card-border;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 24px 20px;
   text-align: center;
   transition: all 0.3s ease;
+  cursor: pointer;
 
   &:hover {
-    border-color: $card-border-hover;
+    border-color: var(--border-hover);
     transform: translateY(-5px);
     box-shadow: $glow-primary;
 
@@ -122,14 +121,14 @@
 .skill-card h5 {
   font-size: 14px;
   font-weight: 600;
-  color: $white-color;
+  color: var(--text-primary);
   margin-bottom: 12px;
 }
 
 .skill-bar {
   width: 100%;
   height: 4px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--border-color);
   border-radius: 2px;
   overflow: hidden;
   margin-bottom: 6px;
@@ -144,11 +143,10 @@
 
 .skill-level {
   font-size: 12px;
-  color: $text-muted;
+  color: var(--text-secondary);
   font-weight: 500;
 }
 
-// Education Timeline
 .education-timeline {
   position: relative;
   max-width: 800px;
@@ -181,20 +179,21 @@
   height: 18px;
   border-radius: 50%;
   background: $primary-color;
-  border: 3px solid $black-color;
+  border: 3px solid var(--bg-primary);
   box-shadow: 0 0 12px rgba($primary-color, 0.5);
   z-index: 1;
 }
 
 .edu-card {
-  background: $card-bg;
-  border: 1px solid $card-border;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 24px;
   transition: all 0.3s ease;
+  cursor: pointer;
 
   &:hover {
-    border-color: $card-border-hover;
+    border-color: var(--border-hover);
     box-shadow: $glow-primary;
     transform: translateX(5px);
   }
@@ -223,7 +222,7 @@
 .edu-card h4 {
   font-size: 16px;
   font-weight: 600;
-  color: $white-color;
+  color: var(--text-primary);
   margin-bottom: 2px;
 }
 
@@ -234,13 +233,13 @@
 }
 
 .edu-school {
-  color: $text-muted;
+  color: var(--text-secondary);
   font-size: 14px;
   margin-bottom: 4px;
 }
 
 .edu-board {
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--text-dim);
   font-size: 13px;
   margin-bottom: 8px;
 }
@@ -256,79 +255,26 @@
   border: 1px solid rgba($primary-color, 0.2);
 }
 
-// Light Mode
-.light-font-color { color: $black-color !important; }
-
-.about-light {
-  background-color: $light-mode-bg-color;
-
-  .role-title { color: darken($primary-color, 10%); }
-  .about-text { color: rgba($black-color, 0.7); }
-  .about-text strong { color: $black-color; }
-
-  .info-item {
-    background: $light-card-bg;
-    border-color: $light-card-border;
-    &:hover { border-color: rgba($primary-color, 0.5); }
-  }
-
-  .info-label { color: rgba($black-color, 0.5); }
-  .info-value { color: $black-color; }
-
-  .skill-card {
-    background: $light-card-bg;
-    border-color: $light-card-border;
-    &:hover {
-      border-color: rgba($primary-color, 0.5);
-      box-shadow: 0 8px 25px rgba($primary-color, 0.12);
-    }
-  }
-
-  .skill-card h5 { color: $black-color; }
-  .skill-bar { background: rgba(0, 0, 0, 0.1); }
-
-  .education-timeline::before {
-    background: linear-gradient(to bottom, $primary-color, darken($primary-color, 20%));
-  }
-
-  .edu-dot { border-color: $light-mode-bg-color; }
-
-  .edu-card {
-    background: $light-card-bg;
-    border-color: $light-card-border;
-    &:hover {
-      border-color: rgba($primary-color, 0.5);
-      box-shadow: 0 8px 25px rgba($primary-color, 0.12);
-    }
-  }
-
-  .edu-card h4 { color: $black-color; }
-  .edu-school { color: rgba($black-color, 0.7); }
-  .edu-board { color: rgba($black-color, 0.5); }
-}
-
-// Responsive
 @media (max-width: 992px) {
-  .about-section { padding: 80px 0; }
+  .about-section { padding: 30px 0 80px; }
   .skills-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 768px) {
-  .about-section { padding: 60px 0; }
+  .about-section { padding: 30px 0 60px; }
   .info-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: repeat(3, 1fr); }
   .role-title { font-size: 24px; }
 }
 
 @media (max-width: 576px) {
-  .about-section { padding: 50px 16px; }
+  .about-section { padding: 30px 16px 50px; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .role-title { font-size: 22px; }
   .about-text { font-size: 13px; }
   .info-item { padding: 12px; }
   .skill-card { padding: 18px 14px; }
   .skill-icon { width: 42px; height: 42px; font-size: 18px; }
-
   .education-timeline::before { left: 12px; }
   .edu-item { padding-left: 38px; }
   .edu-dot { left: 4px; width: 16px; height: 16px; }

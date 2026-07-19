@@ -1,5 +1,5 @@
 <div class="modal-overlay" *ngIf="successMessage" (click)="successMessage = false">
-  <div class="success-dialog" [ngClass]="themeMode ? 'success-dialog-light' : ''">
+  <div class="success-dialog">
     <div class="success-icon">
       <i class="fas fa-check"></i>
     </div>
@@ -9,7 +9,7 @@
 </div>
 
 <div class="modal-overlay" *ngIf="errorMessage" (click)="errorMessage = false">
-  <div class="success-dialog error-dialog" [ngClass]="themeMode ? 'success-dialog-light' : ''">
+  <div class="success-dialog error-dialog">
     <div class="success-icon error">
       <i class="fas fa-times"></i>
     </div>
@@ -18,16 +18,16 @@
   </div>
 </div>
 
-<div class="contact-section" [ngClass]="themeMode ? 'light-bg' : ''">
+<div class="contact-section">
   <div class="container">
-    <div class="section-title" [ngClass]="themeMode ? 'light-font-color' : ''" appScrollReveal>
-      <span class="section-number">05</span>
+    <div class="section-title" appScrollReveal>
+      <span class="section-number">04</span>
       <h2>Contact</h2>
       <p>Get In Touch</p>
     </div>
 
     <div class="contact-wrapper">
-      <div class="contact-info" [ngClass]="themeMode ? 'contact-info-light' : ''">
+      <div class="contact-info">
         <div class="info-card">
           <div class="info-icon"><i class="fas fa-envelope"></i></div>
           <div>
@@ -58,7 +58,7 @@
         </div>
       </div>
 
-      <div class="contact-form-wrapper" [ngClass]="themeMode ? 'form-light' : ''">
+      <div class="contact-form-wrapper">
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
           <div *ngIf="generalErrorMessageShow" class="form-error">
             <i class="fas fa-exclamation-circle"></i>

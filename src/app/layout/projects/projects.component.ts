@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CommonService } from 'src/app/service/common.service';
 
 @Component({
   selector: 'app-projects',
@@ -7,7 +6,6 @@ import { CommonService } from 'src/app/service/common.service';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent {
-  themeMode: boolean = false;
 
   projects = [
     {
@@ -42,11 +40,5 @@ export class ProjectsComponent {
     }
   ];
 
-  constructor(private commonService: CommonService) { }
-
-  ngOnInit() {
-    this.commonService.theme.subscribe((res) => {
-      this.themeMode = res === true ? false : true;
-    });
-  }
+  constructor() { }
 }
