@@ -1,5 +1,5 @@
 {
   "buildCommand": "npx ng build --configuration=production",
-  "outputDirectory": "dist/sunil-portfolio",
+  "outputDirectory": "dist/portfolio",
   "framework": "angular"
 }
