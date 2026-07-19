@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { CommonService } from 'src/app/service/common.service';
 
 @Component({
   selector: 'app-contact',
@@ -8,28 +7,16 @@ import { CommonService } from 'src/app/service/common.service';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
-  themeMode: boolean = false;
   contactForm!: FormGroup;
   successMessage: boolean = false;
   errorMessage: boolean = false;
   generalErrorMessage: string | undefined;
   generalErrorMessageShow: any = false;
 
-  constructor(private commonService: CommonService) { }
+  constructor() { }
 
   ngOnInit() {
     this.initForm();
-    this.commonService.theme.subscribe((res) => {
-      this.themeMode = res === true ? false : true;
-    });
-  }
-
-  toggleTheme(data: any) {
-    if (data === 'dark') {
-      this.commonService.theme.next(true);
-    } else {
-      this.commonService.theme.next(false);
-    }
   }
 
   initForm() {

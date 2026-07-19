@@ -1,6 +1,40 @@
 @import 'bootstrap/scss/bootstrap';
 @import './assets/variables';
 
+:root {
+  --bg-primary: #000;
+  --bg-secondary: rgba(255, 255, 255, 0.05);
+  --text-primary: #fff;
+  --text-secondary: #a0a0a0;
+  --text-dim: rgba(255, 255, 255, 0.4);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(237, 14, 85, 0.5);
+  --nav-bg: rgba(0, 0, 0, 0.85);
+  --nav-bg-scrolled: rgba(0, 0, 0, 0.95);
+  --nav-mobile-bg: rgba(15, 15, 15, 0.98);
+  --nav-mobile-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --input-placeholder: rgba(255, 255, 255, 0.3);
+  --overlay-bg: rgba(0, 0, 0, 0.5);
+}
+
+body.light-mode {
+  --bg-primary: #f5f5f5;
+  --bg-secondary: rgba(0, 0, 0, 0.05);
+  --text-primary: #1a1a2e;
+  --text-secondary: rgba(26, 26, 46, 0.6);
+  --text-dim: rgba(26, 26, 46, 0.5);
+  --border-color: rgba(0, 0, 0, 0.1);
+  --border-hover: rgba(237, 14, 85, 0.5);
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --nav-bg-scrolled: rgba(255, 255, 255, 0.98);
+  --nav-mobile-bg: rgba(255, 255, 255, 0.98);
+  --nav-mobile-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+  --input-bg: rgba(0, 0, 0, 0.03);
+  --input-placeholder: rgba(26, 26, 46, 0.4);
+  --overlay-bg: rgba(0, 0, 0, 0.3);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,16 +47,17 @@ html {
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: $black-color;
-  color: $white-color;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 
   &::-webkit-scrollbar {
     width: 8px;
   }
 
   &::-webkit-scrollbar-track {
-    background: $black-color;
+    background: var(--bg-primary);
   }
 
   &::-webkit-scrollbar-thumb {
@@ -72,7 +107,7 @@ section[id] {
     font-weight: 500;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: $text-muted;
+    color: var(--text-secondary);
     border-bottom: 2px solid $primary-color;
     display: inline-block;
     padding-bottom: 8px;
@@ -83,7 +118,7 @@ section[id] {
     font-size: 32px;
     font-weight: 700;
     text-transform: uppercase;
-    color: $white-color;
+    color: var(--text-primary);
   }
 }
 

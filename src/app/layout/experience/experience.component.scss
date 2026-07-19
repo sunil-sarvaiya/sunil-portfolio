@@ -1,8 +1,9 @@
 @import '../../../assets/variables';
 
 .experience-section {
-  background-color: $black-color;
+  background-color: var(--bg-primary);
   padding: 40px 0 100px;
+  transition: background-color 0.3s ease;
 }
 
 .timeline {
@@ -37,20 +38,20 @@
   height: 18px;
   border-radius: 50%;
   background: $primary-color;
-  border: 3px solid $black-color;
+  border: 3px solid var(--bg-primary);
   box-shadow: 0 0 12px rgba($primary-color, 0.5);
   z-index: 1;
 }
 
 .timeline-card {
-  background: $card-bg;
-  border: 1px solid $card-border;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 28px;
   transition: all 0.3s ease;
 
   &:hover {
-    border-color: $card-border-hover;
+    border-color: var(--border-hover);
     box-shadow: $glow-primary;
     transform: translateX(5px);
   }
@@ -79,7 +80,7 @@
 h4 {
   font-size: 18px;
   font-weight: 600;
-  color: $white-color;
+  color: var(--text-primary);
   margin-bottom: 2px;
 }
 
@@ -92,12 +93,12 @@ h4 {
 .timeline-role {
   display: block;
   font-size: 13px;
-  color: $text-muted;
+  color: var(--text-secondary);
   margin-bottom: 2px;
 }
 
 .timeline-card > p {
-  color: $text-muted;
+  color: var(--text-secondary);
   font-size: 14px;
   line-height: 1.8;
   margin-bottom: 16px;
@@ -119,55 +120,18 @@ h4 {
   border: 1px solid rgba($primary-color, 0.2);
 }
 
-.light-bg {
-  background-color: $light-mode-bg-color !important;
-
-  .timeline::before {
-    background: linear-gradient(to bottom, $primary-color, darken($primary-color, 20%));
-  }
-
-  .timeline-dot {
-    background: $primary-color;
-    border-color: $light-mode-bg-color;
-  }
-
-  .timeline-card {
-    background: $light-card-bg;
-    border-color: $light-card-border;
-
-    &:hover {
-      border-color: rgba($primary-color, 0.5);
-      box-shadow: 0 8px 25px rgba($primary-color, 0.12);
-    }
-  }
-
-  h4 { color: $black-color; }
-  .timeline-card > p { color: rgba($black-color, 0.6); }
-}
-
-.light-font-color { color: $black-color !important; }
-
 @media (max-width: 992px) {
   .experience-section { padding: 30px 0 80px; }
 }
 
 @media (max-width: 768px) {
   .experience-section { padding: 30px 0 60px; }
-
   .timeline {
     padding-left: 0;
-
     &::before { left: 12px; }
   }
-
   .timeline-item { padding-left: 40px; }
-
-  .timeline-dot {
-    left: 4px;
-    width: 16px;
-    height: 16px;
-  }
-
+  .timeline-dot { left: 4px; width: 16px; height: 16px; }
   .timeline-card { padding: 22px 18px; }
   .timeline-header { gap: 12px; }
   .timeline-icon { width: 38px; height: 38px; min-width: 38px; font-size: 15px; }
@@ -177,17 +141,9 @@ h4 {
 
 @media (max-width: 576px) {
   .experience-section { padding: 30px 16px 50px; }
-
   .timeline::before { left: 8px; }
-
   .timeline-item { padding-left: 32px; }
-
-  .timeline-dot {
-    left: 2px;
-    width: 14px;
-    height: 14px;
-  }
-
+  .timeline-dot { left: 2px; width: 14px; height: 14px; }
   .timeline-card { padding: 18px 14px; }
   .tag { font-size: 11px; padding: 3px 10px; }
   h4 { font-size: 15px; }

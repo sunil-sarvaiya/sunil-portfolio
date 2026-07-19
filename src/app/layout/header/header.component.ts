@@ -57,6 +57,10 @@ export class HeaderComponent {
     this.restoreBody();
   }
 
+  toggleTheme() {
+    this.commonService.theme.next(!this.commonService.theme.value);
+  }
+
   @HostListener('window:scroll')
   onScroll() {
     this.isScrolled = window.scrollY > 50;

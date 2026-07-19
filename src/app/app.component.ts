@@ -10,7 +10,6 @@ export class AppComponent {
   title = 'portfolio';
    showScrollButton = false;
    scrollThreshold = 100; 
-   themeMode:boolean=false;
     
     constructor(private commonService:CommonService){
 
@@ -19,10 +18,10 @@ export class AppComponent {
    ngOnInit(){
     this.commonService.theme.subscribe((res)=>{
       if(res === true){
-        this.themeMode = false;
+        document.body.classList.remove('light-mode');
       }
       else{
-        this.themeMode = true;
+        document.body.classList.add('light-mode');
       }
     })
   }
