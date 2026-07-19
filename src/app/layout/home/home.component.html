@@ -39,28 +39,12 @@
             integrating REST APIs, optimizing performance, and implementing end-to-end & unit testing.
           </p>
 
-          <div class="hero-stats">
-            <div class="stat-item">
-              <span class="stat-number">{{ animatedYears }}</span>
-              <span class="stat-plus">+</span>
-              <span class="stat-label">Years Experience</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">{{ animatedProjects }}</span>
-              <span class="stat-label">Projects</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">{{ animatedClients }}</span>
-              <span class="stat-label">Clients Served</span>
-            </div>
-          </div>
-
           <div class="hero-actions">
             <button class="btn-primary-custom" (click)="downloadPdf()">
               <i class="fas fa-download"></i>
               {{ homeData?.downloadCV }}
             </button>
-            <a routerLink="/contact" class="btn-secondary-custom">
+            <a href="#contact" class="btn-secondary-custom">
               <i class="fas fa-paper-plane"></i>
               Get In Touch
             </a>

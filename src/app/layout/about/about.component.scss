@@ -2,8 +2,7 @@
 
 .about-section {
   background-color: $black-color;
-  padding: 90px 0 100px;
-  min-height: 100vh;
+  padding: 40px 0 100px;
 }
 
 // About Intro
@@ -309,19 +308,19 @@
 
 // Responsive
 @media (max-width: 992px) {
-  .about-section { padding: 90px 0 80px; }
+  .about-section { padding: 30px 0 80px; }
   .skills-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 768px) {
-  .about-section { padding: 90px 0 60px; }
+  .about-section { padding: 30px 0 60px; }
   .info-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: repeat(3, 1fr); }
   .role-title { font-size: 24px; }
 }
 
 @media (max-width: 576px) {
-  .about-section { padding: 90px 16px 50px; }
+  .about-section { padding: 30px 16px 50px; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .role-title { font-size: 22px; }
   .about-text { font-size: 13px; }

@@ -16,7 +16,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   animatedProjects = 0;
   animatedClients = 0;
 
-  private typingWords = ['Angular Developer', 'Frontend Developer', 'UI/UX Enthusiast'];
+  private typingWords = ['Angular Developer'];
   private wordIndex = 0;
   private charIndex = 0;
   private isDeleting = false;
@@ -38,13 +38,11 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     this.startTyping();
-    this.startCounters();
     this.initParticles();
   }
 
   ngOnDestroy() {
     clearTimeout(this.typingTimer);
-    clearInterval(this.counterTimer);
     if (this.animationFrameId) {
       cancelAnimationFrame(this.animationFrameId);
     }

@@ -2,8 +2,7 @@
 
 .contact-section {
   background-color: $black-color;
-  padding: 90px 0 100px;
-  min-height: 100vh;
+  padding: 40px 0 100px;
 }
 
 .contact-wrapper {
@@ -243,11 +242,11 @@ h5 {
 }
 
 @media (max-width: 992px) {
-  .contact-section { padding: 90px 0 80px; }
+  .contact-section { padding: 30px 0 80px; }
 }
 
 @media (max-width: 768px) {
-  .contact-section { padding: 90px 0 60px; }
+  .contact-section { padding: 30px 0 60px; }
   .contact-wrapper {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -256,7 +255,7 @@ h5 {
 }
 
 @media (max-width: 576px) {
-  .contact-section { padding: 90px 16px 50px; }
+  .contact-section { padding: 30px 16px 50px; }
   .form-row { grid-template-columns: 1fr; }
   .contact-form-wrapper { padding: 24px 16px; }
   .info-card { padding: 16px; gap: 12px; }
