@@ -65,7 +65,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
 
   initParticles() {
     this.particleCanvas = document.getElementById('particleCanvas') as HTMLCanvasElement;
-    if (!this.particleCanvas) return;
+    if (!this.particleCanvas || !this.particleCanvas.getContext) return;
 
     this.particleCtx = this.particleCanvas.getContext('2d');
     this.resizeCanvas();

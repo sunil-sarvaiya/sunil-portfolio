@@ -29,6 +29,7 @@
   border: 1px solid var(--border-color);
   border-radius: 12px;
   transition: all 0.3s ease;
+  cursor: pointer;
 
   &:hover {
     border-color: var(--border-hover);
@@ -168,7 +169,7 @@ h5 {
 }
 
 .success-dialog {
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
   border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 40px;

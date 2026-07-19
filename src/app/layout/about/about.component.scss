@@ -41,6 +41,7 @@
   border: 1px solid var(--border-color);
   border-radius: 10px;
   transition: all 0.3s ease;
+  cursor: pointer;
 
   &:hover {
     border-color: var(--border-hover);
@@ -88,6 +89,7 @@
   padding: 24px 20px;
   text-align: center;
   transition: all 0.3s ease;
+  cursor: pointer;
 
   &:hover {
     border-color: var(--border-hover);
@@ -188,6 +190,7 @@
   border-radius: 12px;
   padding: 24px;
   transition: all 0.3s ease;
+  cursor: pointer;
 
   &:hover {
     border-color: var(--border-hover);

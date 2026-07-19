@@ -49,6 +49,7 @@
   border-radius: 12px;
   padding: 28px;
   transition: all 0.3s ease;
+  cursor: pointer;
 
   &:hover {
     border-color: var(--border-hover);
