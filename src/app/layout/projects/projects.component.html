@@ -13,7 +13,12 @@
             <i [class]="project.icon"></i>
           </div>
           <h4>{{ project.title }}</h4>
-          <p>{{ project.description }}</p>
+          <div class="project-tech-tags" *ngIf="project.techStack">
+            <span class="tech-tag" *ngFor="let tech of project.techStack">{{ tech }}</span>
+          </div>
+          <ul class="project-points" *ngIf="project.points">
+            <li *ngFor="let point of project.points">{{ point }}</li>
+          </ul>
         </div>
       </div>
     </div>

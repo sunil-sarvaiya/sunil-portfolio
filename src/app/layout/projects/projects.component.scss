@@ -65,6 +65,23 @@ h4 {
   color: var(--text-primary);
 }
 
+.project-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.tech-tag {
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  background: rgba($primary-color, 0.1);
+  color: $primary-color;
+  border: 1px solid rgba($primary-color, 0.2);
+}
+
 p {
   color: var(--text-secondary);
   font-size: 14px;

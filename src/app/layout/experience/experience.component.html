@@ -20,7 +20,9 @@
               <span class="timeline-date">{{ exp.date }}</span>
             </div>
           </div>
-          <p>{{ exp.description }}</p>
+          <ul class="experience-points" *ngIf="exp.points">
+            <li *ngFor="let point of exp.points">{{ point }}</li>
+          </ul>
           <div class="tech-tags">
             <span *ngFor="let tag of exp.tags" class="tag">{{ tag }}</span>
           </div>
