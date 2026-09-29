@@ -7,6 +7,34 @@ import { Component } from '@angular/core';
 })
 export class AboutComponent {
 
+  skillCategories = [
+    {
+      category: 'Frontend',
+      icon: 'fas fa-laptop-code',
+      skills: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'TypeScript', 'Angular']
+    },
+    {
+      category: 'UI Libraries',
+      icon: 'fas fa-palette',
+      skills: ['PrimeNG', 'DevExtreme', 'Bootstrap', 'PrimeFlex', 'TailwindCSS']
+    },
+    {
+      category: 'Backend',
+      icon: 'fas fa-server',
+      skills: ['Node.js']
+    },
+    {
+      category: 'Testing',
+      icon: 'fas fa-vial',
+      skills: ['Playwright (E2E)', 'Jest (Unit Tests)']
+    },
+    {
+      category: 'Tools',
+      icon: 'fas fa-tools',
+      skills: ['GitHub', 'Bitbucket', 'VS Code', 'SonarQube', 'n8n']
+    }
+  ];
+
   education = [
     {
       degree: 'Bachelor of Engineering (Computer Engineering)',

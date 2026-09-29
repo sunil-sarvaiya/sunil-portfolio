@@ -11,7 +11,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
 
   displayText = '';
 
-  private typingWords = ['Angular Developer'];
+  private typingWords = ['Full Stack Developer', 'Angular Specialist'];
   private wordIndex = 0;
   private charIndex = 0;
   private isDeleting = false;
